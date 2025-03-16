@@ -26,6 +26,7 @@ body {
     box-shadow: none;
     padding: 0;
     transition: transform 0.5s ease-in-out;
+    
 }
 
 .screen {
@@ -112,12 +113,14 @@ body {
 }
 
 .nav-buttons {
+    transform: rotate(-90deg);
     width: 100%;
     display: flex;
     justify-content: space-around;
     position: absolute;
-    bottom: 30px;
-    padding: 0 20px;
+    bottom: 90px;
+    left: 350px;
+    padding: 140px;
     box-sizing: border-box;
 }
 
@@ -156,11 +159,11 @@ body {
 }
 
 .phone.rotated .icons {
-    transform: rotate(-90deg) translateY(-50%);
+    transform: rotate(-90deg) ;
     transform-origin: center;
     position: absolute;
     top: 50%;
-    right: 0; /* Mueve a la parte derecha */
+    right: 20; /* Mueve a la parte derecha */
     width: auto; /* Ajustado para que se adapte */
     display: flex;
     flex-direction: column; /* Apila los íconos verticalmente */
@@ -204,4 +207,4 @@ body {
 .phone.rotated .nav-button img {
     width: 40px; /* Ajusta el tamaño si es necesario */
     height: 60px; /* Ajusta según la orientación de las imágenes */
-}
+}   
