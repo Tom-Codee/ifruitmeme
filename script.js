@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Funciones de los botones de navegación (placeholders)
     function goBack() {
-        console.log("Volver atrás");
+        window.location.href = "../index.html"; // Redirige a index.html
     }
 
     function goHome() {
-        console.log("Ir a inicio");
+        window.location.href = "index.html"; // Redirige a index.html
     }
 
     function openApps() {
