@@ -1,0 +1,138 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F9F7EB;
+    background-image: url('images/background.png');
+    background-size: contain;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    min-height: 700px; /* Ajustado para el móvil más grande */
+    min-width: 900px; /* Ajustado para el móvil más grande */
+}
+
+.phone {
+    width: 600px; /* Aumentado para un móvil más grande */
+    height: 350px; /* Ajustado para mantener proporciones */
+    background-image: url('images/borde.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px; /* Bordes curvados */
+    overflow: hidden; /* Asegura que el contenido no se desborde del borde curvo */
+    transition: transform 0.5s ease-in-out;
+    transform: rotate(90deg); /* Rotación por defecto a 90 grados */
+}
+
+.screen {
+    width: 90%; /* 90% de 600px = 540px */
+    height: 80%; /* 80% de 350px = 280px */
+    margin-top: 20px;
+    background-color: transparent; /* Transparente para mostrar el fondo del body */
+    border-radius: 20px; /* Bordes curvados internos */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.status-bar {
+    width: 600px; /* Ajustado al nuevo ancho del phone */
+    height: 50px;
+    background: #000;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 0;
+    z-index: 2;
+    transform: rotate(-90deg); /* Contrarrotación para mantenerlo vertical */
+    transform-origin: top left;
+}
+
+.status-icons,
+.battery-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.status-icons img,
+.battery-icon img {
+    width: auto;
+}
+
+.status-icons img:first-child {
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: 15px;
+}
+
+.status-icons img:last-child {
+    height: 20px;
+    left: 40px;
+    position: absolute;
+    top: 15px;
+}
+
+.status-bar span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg); /* Contrarrotación del texto */
+    font-size: 14px;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+    top: 15px;
+    z-index: 1;
+}
+
+.battery-icon img {
+    height: 20px;
+    right: 10px;
+    position: absolute;
+    top: 15px;
+}
+
+.app-content {
+    flex: 1; /* Ocupa el espacio restante dentro de .screen */
+    background-color: #F9F7EB; /* Fondo predeterminado */
+    overflow: auto; /* Permite desplazamiento si el contenido es largo */
+}
+
+.nav-buttons {
+    width: 350px; /* Ajustado al nuevo alto del phone */
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transform: rotate(-90deg); /* Contrarrotación para mantenerlos verticales */
+    transform-origin: center center;
+    left: 50%;
+    transform: rotate(-90deg) translateX(-50%);
+}
+
+.nav-button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-button img {
+    width: 60px;
+    height: 40px;
+}
