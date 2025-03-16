@@ -1,0 +1,135 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F9F7EB; /* Fallback color */
+    background-image: url('images/background.png'); /* Ensure this path is correct */
+    background-size: contain; /* Ensures the entire image is visible, scaled proportionally */
+    background-position: bottom center; /* Positions the image at the bottom */
+    background-repeat: no-repeat; /* Prevents tiling */
+}
+.phone {
+    width: 350px;
+    height: 600px;
+    background-image: url('images/borde.png'); /* Usa tu imagen como fondo */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Base para posicionamiento absoluto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+    padding: 0; /* Eliminamos padding para que .status-bar pueda cubrir todo */
+}
+
+.screen {
+    width: 90%;
+    height: 80%;
+    margin-top: 20px; /* Ajusta según la posición de .status-bar */
+    background-color: #F9F7EB;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.status-bar {
+    width: 350px; /* Ancho inicial, cámbialo a tu tamaño exacto (ej. 340px, 360px) */
+    height: 50px; /* Altura inicial, cámbialo a tu tamaño exacto (ej. 40px, 60px) */
+    background: #000;
+    color: white;
+    font-size: 14px;
+    position: absolute; /* Posicionamiento absoluto dentro de .phone */
+    left: 0px; /* Posición inicial desde el borde izquierdo, cámbialo (ej. 0px, 10px) */
+    top: 0px; /* Posición inicial desde el borde superior, cámbialo (ej. 0px, 20px) */
+    padding: 0;
+    z-index: 2; /* Asegura que esté por encima de otros elementos */
+    
+}
+
+.status-icons,
+.battery-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.status-icons img,
+.battery-icon img {
+    width: auto;
+}
+
+.status-icons img:first-child {
+    height: 20px;
+    left: 10px;
+    position: absolute;
+    top: 15px; /* Ajusta según la altura de .status-bar */
+}
+
+.status-icons img:last-child {
+    height: 20px;
+    left: 40px;
+    position: absolute;
+    top: 15px; /* Ajusta según la altura de .status-bar */
+}
+
+.status-bar span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    width: 80px;
+    text-align: center;
+    top: 200px; /* Ajusta según la altura de .status-bar */
+    z-index: 1;
+}
+
+.battery-icon img {
+    height: 20px;
+    right: 10px;
+    position: absolute;
+    top: 15px; /* Ajusta según la altura de .status-bar */
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    margin-top: 50px;
+}
+
+.icon img {
+    width: 70px;
+    height: 70px;
+}
+
+.nav-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* Distribuye los botones uniformemente */
+    position: absolute;
+    bottom: 30px; /* Ajusta esta distancia para que coincida con la imagen */
+    padding: 0 20px; /* Añade un poco de padding lateral para que no queden pegados a los bordes */
+    box-sizing: border-box;
+}
+
+.nav-button {
+    width: 40px; /* Ajusta el tamaño del botón */
+    height: 40px;
+    background-color: transparent; /* Quita el fondo gris */
+    border: none; /* Quita el borde */
+    border-radius: 50%; /* Mantiene la forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Muestra que es un botón clickable */
+}
+
+.nav-button img {
+    width: 60px; /* Ajusta el tamaño de la imagen dentro del botón */
+    height: 40px;
+}

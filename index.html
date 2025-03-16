@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA Phone Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone">
+        <div class="screen">
+            <div class="status-bar">
+                <div class="status-icons">
+                    <img src="images/señal.png" alt="Señal">
+                    <img src="images/segundologo.png" alt="Wi-Fi">
+                </div>
+                <span id="current-time"></span>
+                <div class="battery-icon">
+                    <img src="images/battery.png" alt="Batería">
+                </div>
+            </div>
+
+            maricon
+            <div class="icons">
+                <a href="webs/mail.html" class="icon"><img src="images/correo.jpeg" alt="Contactos"></a>
+                <a href="webs/messages.html" class="icon"><img src="images/mensaje.jpeg" alt="Mensajes"></a>
+                <a href="webs/contact.html" class="icon"><img src="images/contact.jpg" alt="Cámara"></a>
+                <a href="webs/job.html" class="icon"><img src="images/contact.jpg" alt="Navegador"></a>
+                <a href="webs/tasks.html" class="icon"><img src="images/task.jpeg" alt="Música"></a>
+                <a href="webs/settings.html" class="icon"><img src="images/ajuste.jpeg" alt="Configuración"></a>
+                <a href="webs/draw.html" class="icon"><img src="images/pincel.jpeg" alt="Mapas"></a>
+                <a href="webs/web.html" class="icon"><img src="images/web.jpeg" alt="Tienda"></a>
+                <a href="webs/triangulo.html" class="icon"><img src="images/contact.jpg" alt="Social"></a>
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="goBack()">
+                <img src="images/lupa.png" alt="Atrás">
+            </button>
+            <button class="nav-button" onclick="goHome()">
+                <img src="images/botonhome.png" alt="Inicio">
+            </button>
+            <button class="nav-button" onclick="openApps()">
+                <img src="images/atras.png" alt="Aplicaciones recientes">
+            </button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
