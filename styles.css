@@ -133,3 +133,43 @@ body {
     width: 60px; /* Ajusta el tamaño de la imagen dentro del botón */
     height: 40px;
 }
+
+.phone {
+    transition: transform 0.5s ease-in-out;
+}
+
+.phone.rotated {
+    transform: rotate(90deg);
+    width: 600px;
+    height: 350px;
+    background-color: red; /* Temporal para depuración */
+}
+
+.phone.rotated .status-bar {
+    transform: rotate(-90deg);
+    transform-origin: top left;
+    width: 600px;
+}
+
+.phone.rotated .status-bar span {
+    transform: translateX(-50%) rotate(-90deg);
+}
+
+.phone.rotated .icons {
+    transform: rotate(-90deg);
+    transform-origin: center center;
+}
+
+.phone.rotated .nav-buttons {
+    transform: rotate(-90deg);
+    transform-origin: center center;
+    bottom: 0;
+    width: 350px;
+    left: 50%;
+    transform: rotate(-90deg) translateX(-50%);
+}
+
+body {
+    min-height: 400px;
+    min-width: 650px;
+}
