@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación - GTA Phone Simulator</title>
+    <link rel="stylesheet" href="../estilos/basic.css">
+</head>
+<body>
+    <div class="phone">
+        <div class="screen">
+            <div class="status-bar">
+                <div class="status-icons">
+                    <img src="../images/señal.png" alt="Señal">
+                    <img src="../images/segundologo.png" alt="Wi-Fi">
+                </div>
+                <span id="current-time"></span>
+                <div class="battery-icon">
+                    <img src="../images/battery.png" alt="Batería">
+                </div>
+            </div>
+            <div class="app-content">
+                <!-- Aquí se añadirá el contenido específico de cada aplicación -->
+            </div>
+        </div>
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="goBack()">
+                <img src="../images/lupa.png" alt="Atrás">
+            </button>
+            <button class="nav-button" onclick="window.location.href = '../index.html'">
+                <img src="../images/botonhome.png" alt="Inicio">
+            </button>
+            <button class="nav-button" onclick="openApps()">
+                <img src="../images/atras.png" alt="Aplicaciones recientes">
+            </button>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
