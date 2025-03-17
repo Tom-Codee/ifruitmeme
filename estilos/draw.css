@@ -1,0 +1,183 @@
+
+/* Contenedor del Paint */
+.paint-container {
+    position: relative;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    background: white;
+    border: 4px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+/* Lienzo de dibujo */
+canvas {
+    width: 100%;
+    height: 400px;
+    background: #F9F7EA;
+    border: 1px solid #ddd;
+    cursor: crosshair;
+}
+
+/* Barra de herramientas */
+.toolbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background: #eee;
+    border-top: 2px solid #000;
+}
+
+/* Botones */
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Botón de borrar en rojo */
+#clearCanvas {
+    background: red;
+}
+
+#clearCanvas:hover {
+    background: darkred;
+}
+
+/* Botón de la goma */
+#eraser {
+    background: gray;
+}
+
+#eraser.active {
+    background: black;
+}
+
+/* Inputs */
+input[type="color"],
+input[type="range"] {
+    cursor: pointer;
+}
+
+/* Botón de compartir en X */
+#shareTwitter {
+    background: #1da1f2;
+}
+
+#shareTwitter:hover {
+    background: #0d8ddc;
+}
+
+
+/* 🎨 Estilos de la ventana modal */
+.modal {
+    display: none; /* 🔹 Oculta la ventana al inicio */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out; /* 🔹 Transición suave */
+    opacity: 0;
+    z-index: 9999;
+}
+
+/* 🔹 Cuando se activa el modal */
+.modal.show {
+    display: flex; /* 🔹 Se muestra */
+    opacity: 1;
+}
+
+/* 💠 Contenido del modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out; /* Animación */
+}
+
+/* ✅ Botón de confirmación */
+#confirmUpload {
+    background: #007bff;
+    color: white;
+}
+
+#confirmUpload:hover {
+    background: #0056b3;
+}
+
+/* ❌ Botón de cancelar */
+#closeModal {
+    background: red;
+    color: white;
+}
+
+#closeModal:hover {
+    background: darkred;
+}
+
+/* 🔹 Animación de entrada */
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* 📦 Contenedor de la galería */
+#galleryContainer {
+    width: 90%;
+    max-width: 900px;
+    margin: 120px auto;
+    text-align: center;
+    background: transparent;
+    padding: 20px;
+}
+/* 📌 Galería con 3 imágenes por fila */
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
+    gap: 20px; /* Espacio entre imágenes */
+    justify-content: center;
+}
+
+/* 🎨 Contenedor de cada imagen */
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 📷 Ajuste de imagen para que sea rectangular y no cuadrada */
+.gallery-img {
+    max-width: 100%; /* ✅ Se adapta al contenedor */
+    height: auto; /* ✅ Mantiene la proporción */
+    object-fit: contain; 
+    border: none; /* ❌ Elimina borde rojo */
+}
