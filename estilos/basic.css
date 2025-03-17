@@ -28,7 +28,8 @@ body {
     box-shadow: none;
     padding: 0;
     transition: transform 0.5s ease-in-out;
-    transform: scale(1.5);
+    transform: scale(1);
+    z-index: 2;
     
 }
 
@@ -40,7 +41,8 @@ body {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    z-index: 1;
+
+    
 }
 
 .status-bar {
@@ -55,7 +57,6 @@ body {
     transform: rotate(90deg); /* Contrarresta la rotación del móvil */
     left: -410px;
     top: 0px;
-    z-index: 10;
 }
 
 .status-icons,
@@ -93,7 +94,7 @@ body {
     width: 80px;
     text-align: center;
     top: 15px; /* Ajustado para alinearse correctamente */
-    z-index: 1;
+
 }
 
 .battery-icon img {

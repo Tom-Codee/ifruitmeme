@@ -18,7 +18,6 @@
     align-items: center;
     background-color: #F9F7EA;
     padding-bottom: 20px; /* Espacio extra para demostrar el scroll */
-    z-index: 2;
 }
 
 #paintCanvas {
