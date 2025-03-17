@@ -7,22 +7,35 @@
     <link rel="stylesheet" href="../estilos/basic.css">
 </head>
 <body>
+
     <div class="phone">
-        <div class="screen">
-            <div class="status-bar">
-                <div class="status-icons">
-                    <img src="../images/señal.png" alt="Señal">
-                    <img src="../images/segundologo.png" alt="Wi-Fi">
-                </div>
-                <span id="current-time"></span>
-                <div class="battery-icon">
-                    <img src="../images/battery.png" alt="Batería">
-                </div>
+        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
+        <div class="status-bar">
+            <div class="status-icons">
+                <img src="../images/señal.png" alt="Señal">
+                <img src="../images/segundologo.png" alt="Wi-Fi">
             </div>
-            <div class="app-content">
-                <!-- Aquí se añadirá el contenido específico de cada aplicación -->
+            <span id="current-time">12:00</span>
+            <div class="battery-icon">
+                <img src="../images/battery.png" alt="Batería">
             </div>
         </div>
+
+        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
+        <div class="screen">
+            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
+
+
+            <div class="test-content">
+                <div class="section red">Sección 1</div>
+                <div class="section blue">Sección 2</div>
+                <div class="section green">Sección 3</div>
+                <div class="section yellow">Sección 4</div>
+                <div class="section purple">Sección 5</div>
+            </div>
+        </div>
+
+        <!-- BOTONES FIJOS (SOBRE TODO) -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
@@ -38,6 +51,5 @@
         </div>
     </div>
 
-    <script src="../script.js"></script>
 </body>
 </html>
