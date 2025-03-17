@@ -193,3 +193,23 @@ body {
 .social-icon:hover {
     transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
 }
+
+.social-icons {
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior */
+    left: 10px; /* Ajusta la distancia desde la izquierda */
+    display: flex;
+    gap: 10px; /* Espacio entre las dos imágenes */
+    z-index: 10; /* Asegura que estén por encima del fondo y del phone */
+}
+
+.social-icon {
+    width: 80px; /* Tamaño de las imágenes */
+    height: 80px;
+    cursor: pointer; /* Indica que es clicable */
+    transition: transform 0.2s; /* Efecto suave al hacer hover */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
+}
