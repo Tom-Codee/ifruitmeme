@@ -1,6 +1,6 @@
 
 .paint-container {
-    width: var(--paint-width, 700px);
+    width: var(--paint-width, 500px);
     height: var(--paint-height, 300px);
     position: relative; /* Para flujo natural dentro de .app-content */
     display: flex;

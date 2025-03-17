@@ -47,7 +47,7 @@ body {
     left: 0px; /* Posición inicial desde el borde izquierdo, cámbialo (ej. 0px, 10px) */
     top: 0px; /* Posición inicial desde el borde superior, cámbialo (ej. 0px, 20px) */
     padding: 0;
-    z-index: 1; /* Asegura que esté por encima de otros elementos */
+    z-index: 0; /* Asegura que esté por encima de otros elementos */
     
 }
 
@@ -81,12 +81,13 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 14px;
+    font-size: 10px;
     font-weight: bold;
     width: 80px;
     text-align: center;
-    top: 200px; /* Ajusta según la altura de .status-bar */
-    z-index: 1;
+    height: 20px;
+    right: 10px;
+    top: 15px; /* Ajustado para alinearse correctamente */
 }
 
 .battery-icon img {

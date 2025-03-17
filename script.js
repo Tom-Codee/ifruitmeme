@@ -34,3 +34,19 @@ function goHome() {
 function openApps() {
     console.log("Abrir aplicaciones recientes");
 }
+
+// Función para actualizar la hora
+function updateTime() {
+    const timeElement = document.getElementById('current-time');
+    if (timeElement) { // Verifica que el elemento exista
+        const now = new Date();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+}
+
+// Actualiza la hora inmediatamente y cada segundo
+updateTime();
+setInterval(updateTime, 1000);
