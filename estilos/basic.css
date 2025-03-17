@@ -10,6 +10,8 @@ body {
     background-repeat: no-repeat;
     min-height: 400px;
     min-width: 650px;
+    margin: 0; /* Elimina márgenes por defecto */
+    overflow: hidden; /* Desactiva scroll en la página general */
 }
 
 .phone {

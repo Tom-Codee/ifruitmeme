@@ -1,0 +1,97 @@
+/* Estilos para la app de dibujo */
+.app-content {
+    width: 100%;
+    height: calc(100% - 50px); /* Resta la altura de la barra de estado */
+    position: absolute;
+    top: 50px;
+    left: 0;
+    overflow-y: auto; /* Permite scroll vertical */
+    overflow-x: hidden; /* Evita scroll horizontal */
+    transform-origin: top left;
+}
+
+.paint-container {
+    width: 100%;
+    min-height: 100%; /* Asegura que ocupe al menos el 100% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F9F7EA;
+    padding-bottom: 20px; /* Espacio extra para demostrar el scroll */
+}
+
+#paintCanvas {
+    border: 1px solid #000;
+    background-color: #F9F7EA;
+    width: 100%;
+    height: 70%; /* Mantiene proporción inicial */
+}
+
+.toolbar {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+.toolbar button, 
+.toolbar input {
+    padding: 5px;
+    font-size: 12px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Ajustes para rotación */
+.phone.rotated .app-content {
+    transform: rotate(-90deg);
+    width: 453.6px; /* Altura original del screen */
+    height: 777.6px; /* Ancho original del screen */
+    top: 0;
+    left: 50px;
+    overflow-y: auto; /* Mantiene scroll vertical en rotación */
+    overflow-x: hidden;
+}
+
+.phone.rotated .paint-container {
+    flex-direction: row-reverse;
+}
+
+.phone.rotated #paintCanvas {
+    height: 100%;
+    width: 70%;
+}
+
+.phone.rotated .toolbar {
+    width: 30%;
+    flex-direction: column;
+    height: 100%;
+}
