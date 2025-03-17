@@ -153,7 +153,6 @@ input[type="range"] {
     text-align: center;
     background: transparent;
     padding: 20px;
-    font-weight: bold;
 }
 /* 📌 Galería con 3 imágenes por fila */
 #gallery {
