@@ -74,6 +74,7 @@ body {
     -ms-overflow-style: none; /* Oculta scrollbar en Edge */
     z-index: 1; /* Debajo de phone */
     pointer-events: all; /* Se puede interactuar con la pantalla */
+    overflow-x: hidden; /* 🔹 Evita desplazamiento horizontal */
 }
 
 /* Ocultar scrollbar en Chrome y Safari */

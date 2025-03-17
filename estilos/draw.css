@@ -2,21 +2,21 @@
 /* Contenedor del Paint */
 .paint-container {
     position: relative;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 800px;
+    width: 90%; /* 🔹 Ocupará todo el ancho de .screen */
+    max-width: 90%; /* 🔹 Evita que sea más grande que .screen */
     background: white;
     border: 4px solid #000;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    top: 15px;
+    left: 20px;
 }
 
 /* Lienzo de dibujo */
 canvas {
     width: 100%;
-    height: 400px;
+    height: 250px;
     background: #F9F7EA;
     border: 1px solid #ddd;
     cursor: crosshair;
@@ -25,11 +25,12 @@ canvas {
 /* Barra de herramientas */
 .toolbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* 🔹 Reduce el espacio entre botones */
     align-items: center;
-    padding: 10px;
+    padding: 5px; /* 🔹 Reduce el espacio interno de la toolbar */
     background: #eee;
     border-top: 2px solid #000;
+    gap: 5px; /* 🔹 Espacio reducido entre los botones */
 }
 
 /* Botones */
@@ -37,7 +38,7 @@ button {
     background: #007bff;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 4px 8px;
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
@@ -148,10 +149,11 @@ input[type="range"] {
 #galleryContainer {
     width: 90%;
     max-width: 900px;
-    margin: 120px auto;
+    margin: 10px auto;
     text-align: center;
     background: transparent;
     padding: 20px;
+    font-weight: bold;
 }
 /* 📌 Galería con 3 imágenes por fila */
 #gallery {
