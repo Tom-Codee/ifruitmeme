@@ -132,7 +132,7 @@ body {
 
 .name-image {
     position: absolute;
-    top: -60px; /* Ajusta según dónde quieras el nombre */
+    top: -90px; /* Ajusta según dónde quieras el nombre */
     left: 50%;
     transform: translateX(-50%);
     width: 100px; /* Tamaño de la imagen del nombre, ajusta según necesites */

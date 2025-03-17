@@ -1,21 +1,112 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Actualizar hora
+    function updateTime() {
+        const now = new Date();
+        document.getElementById('current-time').textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Función para abrir aplicaciones recientes (simulada)
+    function openApps() {
+        alert('Abrir aplicaciones recientes');
+    }
+
+    // Cargar imágenes subidas desde Cloudinary
+    async function loadGallery() {
+        try {
+            const response = await fetch('https://api.cloudinary.com/v1_1/dwlbxetry/resources/image?tags=drawings', {
+                headers: {
+                    Authorization: 'Basic ' + btoa('YOUR_API_KEY:YOUR_API_SECRET') // Reemplaza con tus credenciales de Cloudinary
+                }
+            });
+            const data = await response.json();
+            const galleryContainer = document.getElementById('galleryContainer');
+            galleryContainer.innerHTML = ''; // Limpiar galería existente
+
+            if (data.resources && data.resources.length > 0) {
+                data.resources.forEach(image => {
+                    const img = document.createElement('img');
+                    img.src = image.secure_url;
+                    img.alt = 'Uploaded Drawing';
+                    galleryContainer.appendChild(img);
+                });
+            } else {
+                galleryContainer.innerHTML = '<p>No drawings found.</p>';
+            }
+        } catch (error) {
+            console.error('Error al cargar la galería:', error);
+            document.getElementById('galleryContainer').innerHTML = '<p>Error loading gallery.</p>';
+        }
+    }
+
+    // Cargar la galería al iniciar
+    loadGallery();
+
+    // Script para la funcionalidad de dibujo
     const canvas = document.getElementById("paintCanvas");
     if (canvas) {
         const ctx = canvas.getContext("2d");
-        const colorPicker = document.getElementById("colorPicker");
-        const brushSize = document.getElementById("brushSize");
-        const eraserBtn = document.getElementById("eraser");
-        const clearCanvas = document.getElementById("clearCanvas");
-        const downloadCanvas = document.getElementById("downloadCanvas");
-        const shareTwitter = document.getElementById("shareTwitter");
-        const uploadButton = document.getElementById("uploadButton");
+        const colorPicker = document.createElement('input');
+        colorPicker.type = 'color';
+        colorPicker.id = 'colorPicker';
+        colorPicker.value = '#000000';
+
+        const brushSize = document.createElement('input');
+        brushSize.type = 'range';
+        brushSize.id = 'brushSize';
+        brushSize.min = '1';
+        brushSize.max = '20';
+        brushSize.value = '5';
+
+        const eraserBtn = document.createElement('button');
+        eraserBtn.id = 'eraser';
+        eraserBtn.textContent = 'Eraser';
+
+        const clearCanvas = document.createElement('button');
+        clearCanvas.id = 'clearCanvas';
+        clearCanvas.textContent = 'Clean';
+
+        const downloadCanvas = document.createElement('button');
+        downloadCanvas.id = 'downloadCanvas';
+        downloadCanvas.textContent = 'Download';
+
+        const shareTwitter = document.createElement('button');
+        shareTwitter.id = 'shareTwitter';
+        shareTwitter.textContent = 'Share on X';
+
+        const uploadButton = document.createElement('button');
+        uploadButton.id = 'uploadButton';
+        uploadButton.textContent = 'Upload';
+
+        const toolbar = document.querySelector('.toolbar');
+        toolbar.appendChild(document.createTextNode('Color: '));
+        toolbar.appendChild(colorPicker);
+        toolbar.appendChild(document.createTextNode(' Size: '));
+        toolbar.appendChild(brushSize);
+        toolbar.appendChild(eraserBtn);
+        toolbar.appendChild(clearCanvas);
+        toolbar.appendChild(downloadCanvas);
+        toolbar.appendChild(shareTwitter);
+        toolbar.appendChild(uploadButton);
+
         const modal = document.getElementById("uploadModal");
         const closeModal = document.getElementById("closeModal");
         const confirmUpload = document.getElementById("confirmUpload");
         const userWalletInput = document.getElementById("userWallet");
+        const paintContainer = document.querySelector('.paint-container');
 
-        canvas.width = canvas.parentElement.clientWidth;
-        canvas.height = canvas.parentElement.clientHeight * 0.7;
+        // Obtener dimensiones y posición desde atributos data
+        const containerWidth = parseInt(paintContainer.dataset.width) || 700;
+        const containerHeight = parseInt(paintContainer.dataset.height) || 300;
+
+        // Aplicar dimensiones al contenedor
+        paintContainer.style.setProperty('--paint-width', `${containerWidth}px`);
+        paintContainer.style.setProperty('--paint-height', `${containerHeight}px`);
+
+        // Ajustar el tamaño del canvas
+        canvas.width = containerWidth * 0.7; // 70% del ancho del contenedor
+        canvas.height = containerHeight;
 
         let painting = false;
         let erasing = false;
@@ -73,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
 
-        // Lógica de subida
         uploadButton.addEventListener("click", () => {
             modal.classList.add("show");
         });
@@ -110,6 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         alert("✅ Drawing published successfully!");
                         modal.classList.remove("show");
                         userWalletInput.value = "";
+                        // Recargar la galería después de subir una nueva imagen
+                        loadGallery();
                     } else {
                         alert("⛔ Error al subir imagen.");
                     }
