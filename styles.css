@@ -47,7 +47,7 @@ body {
     left: 0px; /* Posición inicial desde el borde izquierdo, cámbialo (ej. 0px, 10px) */
     top: 0px; /* Posición inicial desde el borde superior, cámbialo (ej. 0px, 20px) */
     padding: 0;
-    z-index: 2; /* Asegura que esté por encima de otros elementos */
+    z-index: 1; /* Asegura que esté por encima de otros elementos */
     
 }
 
@@ -117,13 +117,7 @@ body {
     transition: transform 0.2s ease; /* Añade transición para el agrandamiento */
 }
 
-.icon:hover .app-icon {
-    transform: scale(1.2); /* Agranda el ícono al pasar el cursor */
-}
 
-.icon:hover .name-image {
-    opacity: 1; /* Muestra la imagen del nombre */
-}
 
 .icon {
     position: relative; /* Para posicionar la imagen del nombre respecto al icono */
@@ -131,16 +125,27 @@ body {
 }
 
 .name-image {
-    position: absolute;
-    top: -90px; /* Ajusta según dónde quieras el nombre */
-    left: 50%;
+    position: fixed;
+    top: 80px; /* Ajusta esta posición según sea necesario */
+    left: 50%; /* Centra horizontalmente */
     transform: translateX(-50%);
-    width: 100px; /* Tamaño de la imagen del nombre, ajusta según necesites */
-    height: auto;
-    opacity: 0; /* Oculta por defecto */
-    transition: opacity 0.2s ease; /* Para la aparición suave */
-    pointer-events: none; /* Evita interferencias con el hover */
+    width: 300px !important; /* Ajusta el tamaño de la imagen del título */
+    height: 70px !important; /* Ajusta el tamaño de la imagen del título */
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 1; /* Asegura que esté por encima del icono */
+    object-fit: contain; /* Asegura que la imagen se escale correctamente */
 }
+
+.icon:hover .name-image {
+    opacity: 1;
+}
+
+.icon:hover .app-icon {
+    transform: scale(1.2);
+}
+
 
 .nav-buttons {
     width: 100%;
