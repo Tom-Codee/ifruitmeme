@@ -3,45 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator - Drawing App</title>
+    <title>Aplicación - GTA Phone Simulator</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/draw.css">
 </head>
 <body>
+
     <div class="phone">
-        <div class="screen">
-            <div class="status-bar">
-                <div class="status-icons">
-                    <img src="../images/señal.png" alt="Señal">
-                    <img src="../images/segundologo.png" alt="Wi-Fi">
-                </div>
-                <span id="current-time"></span>
-                <div class="battery-icon">
-                    <img src="../images/battery.png" alt="Batería">
-                </div>
+        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
+        <div class="status-bar">
+            <div class="status-icons">
+                <img src="../images/señal.png" alt="Señal">
+                <img src="../images/segundologo.png" alt="Wi-Fi">
             </div>
-            <div class="app-content">
-                <!-- Contenedor del Paint con dimensiones y posición personalizables -->
-                <div class="paint-container" data-width="700" data-height="300" data-top="0" data-left="0">
-                    <canvas id="paintCanvas"></canvas>
-                    <div class="toolbar"></div>
-                </div>
-
-                <!-- Galería de imágenes subidas -->
-                <div id="galleryContainer" class="gallery-container"></div>
-
-                <!-- Modal para subir la imagen -->
-                <div id="uploadModal" class="modal">
-                    <div class="modal-content">
-                        <h2>UPLOAD DRAW</h2>
-                        <label for="userWallet">NAME:</label>
-                        <input type="text" id="userWallet" placeholder="Enter the name of the drawing" required>
-                        <button id="confirmUpload">UPLOAD</button>
-                        <button id="closeModal">Cancel</button>
-                    </div>
-                </div>
+            <span id="current-time">12:00</span>
+            <div class="battery-icon">
+                <img src="../images/battery.png" alt="Batería">
             </div>
         </div>
+
+        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
+        <div class="screen">
+            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
+
+
+            <div class="test-content">
+                <div class="section red">Sección 1</div>
+                <div class="section blue">Sección 2</div>
+                <div class="section green">Sección 3</div>
+                <div class="section yellow">Sección 4</div>
+                <div class="section purple">Sección 5</div>
+            </div>
+        </div>
+
+        <!-- BOTONES FIJOS (SOBRE TODO) -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
@@ -57,7 +52,5 @@
         </div>
     </div>
 
-    <script src="../script.js"></script>
-    <script src="../js/draw.js"></script>
 </body>
 </html>

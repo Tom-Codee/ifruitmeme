@@ -11,212 +11,105 @@ body {
     min-height: 400px;
     min-width: 650px;
     margin: 0;
-    overflow: hidden; /* Oculta scroll del body */
+    overflow: hidden; /* Bloquea scroll en el body */
 }
 
-    .phone {
-        width: 864px;
-        height: 504px;
-        background-image: url('../images/bordegirado.png');
-        background-size: cover;
-        background-position: center;
-        position: relative; /* Importante para que .screen se posicione correctamente */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-        transition: transform 0.5s ease-in-out;
-        transform: scale(1);
-        z-index: 2; /* Asegura que el marco del móvil esté encima */
-    }
-    
-    /* Ajusta la pantalla dentro del móvil */
-    .screen {
-        position: absolute; /* Permite posicionar manualmente dentro de .phone */
-        width: 700px;  /* Ajusta el ancho exacto */
-        height: 450px; /* Ajusta la altura exacta */ 
-        top: 30px;  /* Posición desde la parte superior */
-        left: 40px; /* Posición desde la izquierda */
-        background-color: rgba(0, 0, 0, 0.9); /* Fondo opcional */
-        border-radius: 10px; /* Redondea las esquinas si es necesario */
-        overflow-y: auto; /* Permite scroll solo dentro de la pantalla */
-        z-index: 1; /* Asegura que esté debajo del borde del móvil */
-    }
-    /* Para ocultar scrollbar en Chrome y Safari */
+/* 📱 CONTENEDOR DEL MÓVIL */
+.phone {
+    width: 864px;
+    height: 504px;
+    background-image: url('../images/bordegirado.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    z-index: 2;
+    pointer-events: none; /* No se interactúa con phone */
+}
+
+/* 📟 BARRA DE ESTADO FIJA */
+.status-bar {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 40px;
+    top: 0;
+    z-index: 3;
+}
+
+/* Iconos dentro de la barra */
+.status-icons img, .battery-icon img {
+    width: 30px;
+    transform: rotate(-90deg); /* Rotamos los iconos */
+}
+
+#current-time {
+    transform: rotate(-90deg);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 📲 PANTALLA INTERACTIVA */
+.screen {
+    position: absolute;
+    width: 700px;
+    height: 450px;
+    top: 30px;
+    left: 40px;
+    background-color: #F9F7EB;
+    border-radius: 10px;
+    overflow-y: auto; /* Activa el scroll */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    -ms-overflow-style: none; /* Oculta scrollbar en Edge */
+    z-index: 1; /* Debajo de phone */
+    pointer-events: all; /* Se puede interactuar con la pantalla */
+}
+
+/* Ocultar scrollbar en Chrome y Safari */
 .screen::-webkit-scrollbar {
     display: none;
 }
-    
-    
 
-    .status-bar {
-        width: 864px; /* Ajustado al ancho del phone para que cubra todo */
-        height: 50px;
-        background: #000;
-        color: white;
-        font-size: 14px;
-        position: absolute;
-        padding: 0;
-        z-index: 2;
-        transform: rotate(90deg); /* Contrarresta la rotación del móvil */
-        left: -410px;
-        top: 0px;
-    }
+/* Simulación de contenido largo para probar scroll */
+.screen::after {
+    content: "";
+    display: block;
+    height: 1000px; /* Permite scroll */
+}
 
-    .status-icons,
-    .battery-icon {
-        position: absolute;
-        display: flex;
-        align-items: center;
-    }
+/* 🎮 BOTONES DE NAVEGACIÓN (FIJOS Y SOBRE TODO) */
+.nav-buttons {
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    z-index: 4; /* Encima de todo */
+    pointer-events: all;
+}
 
-    .status-icons img,
-    .battery-icon img {
-        width: auto;
-    }
+.nav-button {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
 
-    .status-icons img:first-child {
-        height: 20px;
-        left: 10px;
-        position: absolute;
-        top: 15px;
-    }
-
-    .status-icons img:last-child {
-        height: 20px;
-        left: 40px;
-        position: absolute;
-        top: 15px;
-    }
-
-    .status-bar span {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 10px;
-        font-weight: bold;
-        width: 80px;
-        text-align: center;
-        top: 15px; /* Ajustado para alinearse correctamente */
-
-    }
-
-    .battery-icon img {
-        height: 20px;
-        right: 10px;
-        position: absolute;
-        top: 15px;
-    }
-
-    .icons {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 20px;
-        justify-items: center;
-        margin-top: 50px;
-    }
-
-    .icon img {
-        width: 70px;
-        height: 70px;
-    }
-
-    .nav-buttons {
-        transform: rotate(-90deg);
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        position: absolute;
-        bottom: 90px;
-        left: 350px;
-        padding: 140px;
-        box-sizing: border-box;
-    }
-
-    .nav-button {
-        width: 40px;
-        height: 40px;
-        background-color: transparent;
-        border: none;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .nav-button img {
-        width: 60px;
-        height: 40px;
-    }
-
-    .phone.rotated {
-        transform: rotate(90deg);
-        width: 504px; /* Altura original como nuevo ancho */
-        height: 864px; /* Ancho original como nueva altura */
-        background-color: transparent; /* Quitamos el color rojo de depuración */
-    }
-
-    .phone.rotated .status-bar {
-        transform: rotate(-90deg);
-        transform-origin: top left;
-        width: 504px; /* Ajustado al nuevo ancho del phone rotado */
-    }
-
-    .phone.rotated .status-bar span {
-        transform: translateX(-50%) rotate(-90deg);
-    }
-
-    .phone.rotated .icons {
-        transform: rotate(-90deg) ;
-        transform-origin: center;
-        position: absolute;
-        top: 50%;
-        right: 20; /* Mueve a la parte derecha */
-        width: auto; /* Ajustado para que se adapte */
-        display: flex;
-        flex-direction: column; /* Apila los íconos verticalmente */
-        align-items: center;
-        gap: 20px; /* Espacio entre íconos */
-        padding: 20px 0;
-        margin: 0;
-    }
-
-    .phone.rotated .icon {
-        transform: rotate(-90deg); /* Rota cada ícono -90 grados */
-        transform-origin: center;
-    }
-
-    .phone.rotated .icon img {
-        width: 70px; /* Mantén el tamaño original */
-        height: 70px; /* Ajusta si es necesario */
-    }
-
-    .phone.rotated .nav-buttons {
-        transform: rotate(-90deg) translateY(-50%);
-        transform-origin: center;
-        bottom: 50%; /* Centra verticalmente en el lado derecho */
-        width: auto; /* Ajustado para que se adapte */
-        left: 100%; /* Mueve al lado derecho */
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; /* Cambia a columna para apilarlos verticalmente a la derecha */
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    .phone.rotated .nav-button {
-        transform: rotate(-90deg); /* Rota cada botón -90 grados */
-        transform-origin: center;
-        margin: 10px 0; /* Espacio entre botones */
-    }
-
-    .phone.rotated .nav-button img {
-        width: 40px; /* Ajusta el tamaño si es necesario */
-        height: 60px; /* Ajusta según la orientación de las imágenes */
-    }   
+.nav-button img {
+    width: 60px;
+    transform: rotate(-90deg); /* Giramos los botones */
+}

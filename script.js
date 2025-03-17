@@ -40,10 +40,12 @@ function updateTime() {
     const timeElement = document.getElementById('current-time');
     if (timeElement) { // Verifica que el elemento exista
         const now = new Date();
+        const days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+        const day = days[now.getDay()]; // Obtiene el día de la semana en formato abreviado
         const hours = now.getHours().toString().padStart(2, '0');
         const minutes = now.getMinutes().toString().padStart(2, '0');
-        const seconds = now.getSeconds().toString().padStart(2, '0');
-        timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+        const timeString = `${day}\u00A0\u00A0\u00A0\u00A0${hours}:${minutes}`; // Formato: día hora:minutos
+        timeElement.textContent = timeString;
     }
 }
 
