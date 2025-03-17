@@ -156,7 +156,7 @@ input[type="range"] {
 }
 /* 📌 Galería con 3 imágenes por fila */
 #gallery {
-    display: grid;
+    display: grid; 
     grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
     gap: 20px; /* Espacio entre imágenes */
     justify-content: center;
