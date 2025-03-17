@@ -185,7 +185,7 @@ body {
 
 .social-icon {
     width: 80px; /* Tamaño de las imágenes */
-    height: 80px;
+    height: 8   0px;
     cursor: pointer; /* Indica que es clicable */
     transition: transform 0.2s; /* Efecto suave al hacer hover */
 }
