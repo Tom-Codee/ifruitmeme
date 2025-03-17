@@ -40,6 +40,7 @@ body {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    z-index: 1;
 }
 
 .status-bar {
@@ -54,6 +55,7 @@ body {
     transform: rotate(90deg); /* Contrarresta la rotación del móvil */
     left: -410px;
     top: 0px;
+    z-index: 10;
 }
 
 .status-icons,
