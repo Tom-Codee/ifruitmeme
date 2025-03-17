@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator (Drawing App)</title>
+    <title>Aplicación - GTA Phone Simulator - Drawing App</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/draw.css">
 </head>
@@ -21,20 +21,10 @@
                 </div>
             </div>
             <div class="app-content">
-                <!-- Contenedor del Paint -->
-                <div class="paint-container">
+                <!-- Contenedor del Paint con dimensiones y posición personalizables -->
+                <div class="paint-container" data-width="700" data-height="300" data-top="0" data-left="0">
                     <canvas id="paintCanvas"></canvas>
-                    <div class="toolbar">
-                        <label for="colorPicker">Color:</label>
-                        <input type="color" id="colorPicker" value="#000000">
-                        <label for="brushSize">Size:</label>
-                        <input type="range" id="brushSize" min="1" max="20" value="5">
-                        <button id="eraser">Eraser</button>
-                        <button id="clearCanvas">Clean</button>
-                        <button id="downloadCanvas">Download</button>
-                        <button id="shareTwitter">Share on X</button>
-                        <button id="uploadButton">Upload</button>
-                    </div>
+                    <div class="toolbar"></div>
                 </div>
 
                 <!-- Modal para subir la imagen -->

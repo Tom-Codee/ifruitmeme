@@ -102,12 +102,44 @@ body {
     gap: 20px;
     padding: 20px;
     justify-items: center;
-    margin-top: 50px;
+    margin-top: 140px;
+    position: relative; /* Necesario para posicionar las imágenes de nombres */
 }
 
 .icon img {
     width: 70px;
     height: 70px;
+}
+
+.app-icon {
+    width: 70px; /* Igual que tu .icon img */
+    height: 70px; /* Igual que tu .icon img */
+    transition: transform 0.2s ease; /* Añade transición para el agrandamiento */
+}
+
+.icon:hover .app-icon {
+    transform: scale(1.2); /* Agranda el ícono al pasar el cursor */
+}
+
+.icon:hover .name-image {
+    opacity: 1; /* Muestra la imagen del nombre */
+}
+
+.icon {
+    position: relative; /* Para posicionar la imagen del nombre respecto al icono */
+    display: inline-block; /* Asegura que el contenedor se ajuste al contenido */
+}
+
+.name-image {
+    position: absolute;
+    top: -60px; /* Ajusta según dónde quieras el nombre */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Tamaño de la imagen del nombre, ajusta según necesites */
+    height: auto;
+    opacity: 0; /* Oculta por defecto */
+    transition: opacity 0.2s ease; /* Para la aparición suave */
+    pointer-events: none; /* Evita interferencias con el hover */
 }
 
 .nav-buttons {
