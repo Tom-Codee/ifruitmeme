@@ -52,3 +52,49 @@ function updateTime() {
 // Actualiza la hora inmediatamente y cada segundo
 updateTime();
 setInterval(updateTime, 1000);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const savedTheme = localStorage.getItem("selectedTheme");
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    }
+});
+
+function applyTheme(theme) {
+    let bgImage = "";
+    let screenColor = "";
+
+    switch (theme) {
+        case "default":
+            bgImage = "url('images/background.png')";
+            screenColor = "#F9F7EB";
+            break;
+        case "red":
+            bgImage = "url('images/back/background-red.png')";
+            screenColor = "#FFD1D1";
+            break;
+        case "blue":
+            bgImage = "url('images/back/background-blue.png')";
+            screenColor = "#D1E0FF";
+            break;
+        case "green":
+            bgImage = "url('images/back/background-green.png')";
+            screenColor = "#D1FFD1";
+            break;
+        case "purple":
+            bgImage = "url('images/back/background-purple.png')";
+            screenColor = "#E0D1FF";
+            break;
+        case "yellow":
+            bgImage = "url('images/back/background-yellow.png')";
+            screenColor = "#FFF8D1";
+            break;
+        default:
+            bgImage = "url('images/background.png')";
+            screenColor = "#F9F7EB";
+    }
+
+    // Aplica los valores al documento
+    document.documentElement.style.setProperty("--home-bg-image", bgImage);
+    document.documentElement.style.setProperty("--screen-bg-color", screenColor);
+}

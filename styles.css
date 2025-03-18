@@ -16,8 +16,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #F9F7EB; /* Fallback color */
-    background-image: url('images/background.png'); /* Ensure this path is correct */
+    background-color:var(--screen-bg-color); /* Fallback color */
+    background-image:var(--home-bg-image); /* Ensure this path is correct */
     background-size: contain; /* Ensures the entire image is visible, scaled proportionally */
     background-position: bottom center; /* Positions the image at the bottom */
     background-repeat: no-repeat; /* Prevents tiling */
@@ -44,7 +44,7 @@ body {
     width: 90%;
     height: 80%;
     margin-top: 20px; /* Ajusta según la posición de .status-bar */
-    background-color: #F9F7EB;
+    background-color: var(--screen-bg-color); 
     border-radius: 10px;
     overflow: hidden;
     position: relative;

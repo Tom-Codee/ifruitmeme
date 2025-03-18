@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 screenColor = "#FFF8D1";
                 break;
             default:
-                bgImage = "url('../images/back/background.png')"; // Fondo por defecto
+                bgImage = "url('../images/background.png')"; // Fondo por defecto
                 screenColor = "#F9F7EB";
         }
     
