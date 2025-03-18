@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación - GTA Phone Simulator</title>
     <link rel="stylesheet" href="../estilos/basic.css">
+    <link rel="stylesheet" href="../estilos/settings.css">
 </head>
 <body>
 
@@ -25,14 +26,21 @@
         <div class="screen">
             <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
 
-
-            <div class="test-content">
-                <div class="section red">Sección 1</div>
-                <div class="section blue">Sección 2</div>
-                <div class="section green">Sección 3</div>
-                <div class="section yellow">Sección 4</div>
-                <div class="section purple">Sección 5</div>
+            <div class="theme-selector">
+                <h2 class="settings-title">Choose Your Theme</h2>
+            <div class="theme-container">
+                <div class="theme-box" data-theme="default" style="background-color: #F9F7EB;"><span>Default</span></div>
+                <div class="theme-box" data-theme="red" style="background-color: #d11010;"></div>
+                <div class="theme-box" data-theme="blue" style="background-color: #0033cc;"></div>
+                <div class="theme-box" data-theme="green" style="background-color: #1d6b1d;"></div>
+                <div class="theme-box" data-theme="purple" style="background-color: #5a2d82;"></div>
+                <div class="theme-box" data-theme="yellow" style="background-color: #f4c542;"></div>
             </div>
+            </div>
+
+
+
+
         </div>
 
         <!-- BOTONES FIJOS (SOBRE TODO) -->
@@ -51,5 +59,7 @@
         </div>
     </div>
 
+    <script src="../js/settings.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

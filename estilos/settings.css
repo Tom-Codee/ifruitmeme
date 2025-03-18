@@ -1,0 +1,30 @@
+
+/* Opciones de tema */
+.theme-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Cuadrados de selección de tema */
+.theme-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efecto al pasar el mouse */
+.theme-box:hover {
+    transform: scale(1.1);
+}
+
+/* Colores de cada opción */
+.theme-box.red { background-color: red; }
+.theme-box.blue { background-color: blue; }
+.theme-box.green { background-color: green; }
+.theme-box.purple { background-color: purple; }
+.theme-box.yellow { background-color: yellow; }

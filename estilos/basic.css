@@ -1,3 +1,14 @@
+:root {
+    --app-bg-color: var(--screen-bg-color); /* Usa el mismo color de screen */
+}
+
+/* Aplicar color dinámico en la pantalla dentro de cada app */
+.screen {
+    background-color: var(--app-bg-color);
+    transition: background-color 0.3s ease-in-out;
+}
+
+
 body {
     display: flex;
     justify-content: center;
@@ -5,7 +16,7 @@ body {
     height: 100vh;
     background-color: #F9F7EB;
     background-image: url('../images/background.png');
-    background-size: contain;
+    background-size: cover;
     background-position: bottom center;
     background-repeat: no-repeat;
     min-height: 400px;
@@ -49,7 +60,9 @@ body {
 }
 
 /* Iconos dentro de la barra */
-.status-icons img, .battery-icon img {
+.status-icons img, 
+
+.battery-icon img {
     width: 30px;
     transform: rotate(-90deg); /* Rotamos los iconos */
 }
