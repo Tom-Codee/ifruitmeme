@@ -1,6 +1,9 @@
 :root {
     --home-bg-image: url('../images/background.png'); /* Fondo por defecto */
     --screen-bg-color: #F9F7EB; /* Color del screen por defecto */
+    --custom-bar-color1: #ababab; /* Primer color del degradado por defecto */
+    --custom-bar-color2: #3f3f3f; /* Segundo color del degradado por defecto */
+    
 }
 
 /* Aplicar fondo dinámico al body (Home del móvil) */
@@ -133,8 +136,8 @@ body {
 
 .custom-bar {
     width: 100%;
-    height: 50px; /* Misma altura que el status-bar, ajusta según necesites */
-    background-image: linear-gradient(to bottom, #ababab 50%, #3f3f3f 50%);
+    height: 50px;
+    background-image: linear-gradient(to bottom, var(--custom-bar-color1) 50%, var(--custom-bar-color2) 50%);
     display: flex;
     top: 69px;
     position: absolute;

@@ -1,0 +1,163 @@
+.google-search-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.google-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.google-logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 300px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 5px 10px;
+    background-color: white;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+#search-input, #search-input-results {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.search-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-buttons button {
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search-buttons button:hover {
+    background-color: #f1f3f4;
+    border: 1px solid #dadce0;
+}
+
+.search-results {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.search-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #dfe1e5;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#search-input-results {
+    margin-right: 10px;
+    border: 1px solid #dfe1e5;
+    border-radius: 4px;
+}
+
+/* Estilos para los resultados de Google Custom Search */
+.gsc-control-cse {
+    font-family: Arial, sans-serif;
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.gsc-search-box {
+    display: none !important; /* Ocultamos la barra de búsqueda de Google Custom Search */
+}
+
+.gsc-results-wrapper-overlay {
+    display: none !important; /* Evitar que los resultados se muestren en un overlay */
+}
+
+.gsc-results {
+    width: 100% !important;
+    padding: 10px !important;
+}
+
+.gsc-result {
+    border-bottom: 1px solid #dfe1e5;
+    padding: 10px 0;
+}
+
+.gsc-thumbnail {
+    max-width: 80px;
+}
+
+.gsc-url-top {
+    color: #1a0dab;
+    font-size: 14px;
+}
+
+.gsc-title {
+    color: #1a0dab;
+    font-size: 16px;
+}
+
+.gsc-snippet {
+    color: #4d5156;
+    font-size: 14px;
+}
+
+.result-item {
+    padding: 10px;
+    border-bottom: 1px solid #dfe1e5;
+}
+
+.result-item h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #1a0dab;
+}
+
+.result-item p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #4d5156;
+}

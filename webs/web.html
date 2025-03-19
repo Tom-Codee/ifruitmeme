@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación - GTA Phone Simulator</title>
     <link rel="stylesheet" href="../estilos/basic.css">
+    <link rel="stylesheet" href="../estilos/web.css">
+    <!-- Script de Google Custom Search -->
+    <script async src="https://cse.google.com/cse.js?cx=10c0dba6931f94fc3"></script>
 </head>
 <body>
 
@@ -24,16 +27,73 @@
         <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
         <div class="screen">
             <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
-
-
-            <div class="test-content">
-                <div class="section red">Sección 1</div>
-                <div class="section blue">Sección 2</div>
-                <div class="section green">Sección 3</div>
-                <div class="section yellow">Sección 4</div>
-                <div class="section purple">Sección 5</div>
+            <div class="google-search-container">
+                <!-- Interfaz que imita la página principal de Google -->
+                <div class="google-home" id="google-home">
+                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo" class="google-logo">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Buscar en Google..." onkeypress="handleSearch(event)">
+                        <button onclick="performSearch()" class="search-icon">
+                            <img src="https://www.google.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Buscar">
+                        </button>
+                    </div>
+                    <div class="search-buttons">
+                        <button onclick="performSearch()">Buscar con Google</button>
+                        <button onclick="performSearch()">Voy a tener suerte</button>
+                    </div>
+                </div>
+        
+                <!-- Contenedor para los resultados simulados -->
+                <div id="search-results" class="search-results" style="display: none;">
+                    <div class="search-header">
+                        <button onclick="goBack()" class="back-button">←</button>
+                        <input type="text" id="search-input-results" onkeypress="handleSearch(event)">
+                        <button onclick="performSearch()">Buscar</button>
+                    </div>
+                    <div id="results-list"></div>
+                </div>
             </div>
         </div>
+        
+        <script>
+            function handleSearch(event) {
+                if (event.key === "Enter") {
+                    performSearch();
+                }
+            }
+        
+            function performSearch() {
+                const query = document.getElementById("search-input").value || document.getElementById("search-input-results").value;
+                if (query.trim() === "") return;
+        
+                // Ocultar la interfaz de búsqueda y mostrar el contenedor de resultados
+                document.getElementById("google-home").style.display = "none";
+                const resultsContainer = document.getElementById("search-results");
+                resultsContainer.style.display = "block";
+        
+                // Actualizar el campo de búsqueda en la página de resultados
+                document.getElementById("search-input-results").value = query;
+        
+                // Simular resultados
+                const resultsList = document.getElementById("results-list");
+                resultsList.innerHTML = `
+                    <div class="result-item">
+                        <h3><a href="#">Resultado 1 para "${query}"</a></h3>
+                        <p>Este es un resultado simulado para la consulta "${query}".</p>
+                    </div>
+                    <div class="result-item">
+                        <h3><a href="#">Resultado 2 para "${query}"</a></h3>
+                        <p>Otro resultado simulado para la consulta "${query}".</p>
+                    </div>
+                `;
+            }
+        
+            function goBack() {
+                document.getElementById("google-home").style.display = "flex";
+                document.getElementById("search-results").style.display = "none";
+                document.getElementById("search-input").value = "";
+            }
+        </script>
 
         <!-- BOTONES FIJOS (SOBRE TODO) -->
         <div class="nav-buttons">
@@ -51,7 +111,8 @@
         </div>
     </div>
 
-
     <script src="../js/settings.js"></script>
+    
+
 </body>
 </html>
