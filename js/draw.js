@@ -33,15 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function draw(e) {
             if (!painting) return;
+        
+            const rect = canvas.getBoundingClientRect(); // Obtiene la posición exacta del canvas
+            const scaleX = canvas.width / rect.width;   // Corrige escalado horizontal
+            const scaleY = canvas.height / rect.height; // Corrige escalado vertical
+        
+            const x = (e.clientX - rect.left) * scaleX; // Aplica corrección de escala
+            const y = (e.clientY - rect.top) * scaleY;  // Aplica corrección de escala
+        
             ctx.lineWidth = brushSize.value;
             ctx.lineCap = "round";
             ctx.strokeStyle = erasing ? "#F9F7EA" : colorPicker.value;
-            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.lineTo(x, y);
             ctx.stroke();
             ctx.beginPath();
-            ctx.moveTo(e.offsetX, e.offsetY);
+            ctx.moveTo(x, y);
         }
-
+        
         
         // 🎨 EVENTOS DEL DIBUJO
         canvas.addEventListener("mousedown", (e) => { painting = true; draw(e); });
