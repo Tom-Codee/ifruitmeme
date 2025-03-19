@@ -7,7 +7,6 @@
 body {
     background-image: var(--home-bg-image);
     background-color: var(--screen-bg-color);
-    transition: background 0.5s ease-in-out;
 }
 
 
@@ -24,6 +23,7 @@ body {
     margin: 0; /* Elimina márgenes por defecto */
     overflow: hidden; /* Desactiva scroll en la página general */
     background-size: cover;
+    
 }
 .phone {
     width: 350px;
