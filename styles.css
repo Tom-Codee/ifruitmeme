@@ -23,6 +23,7 @@ body {
     background-repeat: no-repeat; /* Prevents tiling */
     margin: 0; /* Elimina márgenes por defecto */
     overflow: hidden; /* Desactiva scroll en la página general */
+    background-size: cover;
 }
 .phone {
     width: 350px;
