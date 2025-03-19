@@ -90,6 +90,7 @@ body {
     overflow-x: hidden; /* 🔹 Evita desplazamiento horizontal */
 }
 
+
 /* Ocultar scrollbar en Chrome y Safari */
 .screen::-webkit-scrollbar {
     display: none;

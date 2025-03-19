@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator</title>
+    <title>Aplicación - GTA Phone Simulator - Mail</title>
     <link rel="stylesheet" href="../estilos/basic.css">
+    <link rel="stylesheet" href="../estilos/mail.css">
 </head>
 <body>
-
     <div class="phone">
-        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
         <div class="status-bar">
             <div class="status-icons">
                 <img src="../images/señal.png" alt="Señal">
                 <img src="../images/segundologo.png" alt="Wi-Fi">
             </div>
-            <span id="current-time">12:00</span>
+            <span id="current-time"></span>
             <div class="battery-icon">
                 <img src="../images/battery.png" alt="Batería">
             </div>
         </div>
 
-        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
         <div class="screen">
-            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
-
-
-            <div class="test-content">
-                <div class="section red">Sección 1</div>
-                <div class="section blue">Sección 2</div>
-                <div class="section green">Sección 3</div>
-                <div class="section yellow">Sección 4</div>
-                <div class="section purple">Sección 5</div>
+            <div class="mail-header">
+                <h1 class="mail-title">Gmail</h1>
+                <div class="mail-tabs">
+                    <span class="tab active">Inbox</span>
+                    <span class="tab" data-link="https://x.com/isolfruitcoin">Social</span>
+                    <span class="tab" data-link="https://t.me/+MXMOGUU1TqE4M2Q0">Promotions</span>
+                </div>
+            </div>
+            <div class="mail-list">
+                <div class="mail-item" data-read="false">
+                    <img src="../images/mailplantilla-2.jpg" alt="Correo 1">
+                </div>
+                <div class="mail-item" data-read="false">
+                    <img src="../images/mails/mail2.jpg" alt="Correo 2">
+                </div>
+                <div class="mail-item" data-read="false">
+                    <img src="../images/mails/mail3.jpg" alt="Correo 3">
+                </div>
+                <div class="mail-item" data-read="false">
+                    <img src="../images/mails/mail4.jpg" alt="Correo 4">
+                </div>
+                <div class="mail-item" data-read="false">
+                    <img src="../images/mails/mail5.jpg" alt="Correo 5">
+                </div>
+            </div>
+            <div class="mail-view" style="display: none;">
+                <img src="" alt="Correo">
+                <div class="mail-content"></div>
             </div>
         </div>
 
-        <!-- BOTONES FIJOS (SOBRE TODO) -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
@@ -45,12 +61,13 @@
             <button class="nav-button" onclick="window.location.href = '../index.html'">
                 <img src="../images/botonhome.png" alt="Inicio">
             </button>
-            <button class="nav-button" onclick="openApps()">
+            <button class="nav-button" onclick="goBack()">
                 <img src="../images/atras.png" alt="Aplicaciones recientes">
             </button>
         </div>
     </div>
 
-    <script src="../js/settings.js"></script>
+    <script src="../scripts.js"></script>
+    <script src="../js/mail.js"></script>
 </body>
 </html>

@@ -1,56 +1,85 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator</title>
+    <title>App - GTA Phone Simulator - Messages</title>
     <link rel="stylesheet" href="../estilos/basic.css">
+    <link rel="stylesheet" href="../estilos/messages.css">
 </head>
 <body>
-
     <div class="phone">
-        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
+        <!-- STATUS BAR (FIXED, NON-INTERACTIVE) -->
         <div class="status-bar">
             <div class="status-icons">
-                <img src="../images/señal.png" alt="Señal">
+                <img src="../images/señal.png" alt="Signal">
                 <img src="../images/segundologo.png" alt="Wi-Fi">
             </div>
-            <span id="current-time">12:00</span>
+            <span id="current-time"></span>
             <div class="battery-icon">
-                <img src="../images/battery.png" alt="Batería">
+                <img src="../images/battery.png" alt="Battery">
             </div>
         </div>
 
-        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
+        <!-- INTERACTIVE SCREEN (SCROLLABLE) -->
         <div class="screen">
-            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
+            <!-- CONVERSATIONS LIST -->
+            <div id="conversations-list">
+                <h2>Messages</h2>
+                <div class="conversation" data-name="Elon Musk" data-img="../images/elon.jpg">
+                    <img src="../images/elon.jpg" alt="Elon Musk">
+                    <div class="conversation-info">
+                        <span class="conversation-name">Elon Musk</span>
+                        <span class="conversation-preview">Hey, let's talk about Mars!</span>
+                    </div>
+                </div>
+                <div class="conversation" data-name="Donald Trump" data-img="../images/trump.jpg">
+                    <img src="../images/trump.jpg" alt="Donald Trump">
+                    <div class="conversation-info">
+                        <span class="conversation-name">Donald Trump</span>
+                        <span class="conversation-preview">I have the best ideas, believe me.</span>
+                    </div>
+                </div>
+                <div class="conversation" data-name="Mr. Beast" data-img="../images/mrbeast.jpg">
+                    <img src="../images/mrbeast.jpg" alt="Mr. Beast">
+                    <div class="conversation-info">
+                        <span class="conversation-name">Mr. Beast</span>
+                        <span class="conversation-preview">Want to join my next challenge?</span>
+                    </div>
+                </div>
+            </div>
 
-
-            <div class="test-content">
-                <div class="section red">Sección 1</div>
-                <div class="section blue">Sección 2</div>
-                <div class="section green">Sección 3</div>
-                <div class="section yellow">Sección 4</div>
-                <div class="section purple">Sección 5</div>
+            <!-- CHAT -->
+            <div id="chat-container" style="display: none;">
+                <div class="chat-header">
+                    <img id="chat-img" src="" alt="Contact">
+                    <span id="chat-name"></span>
+                </div>
+                <div id="chat-box"></div>
+                <div class="input-container">
+                    <input type="text" id="user-input" placeholder="Type a message...">
+                    <button id="send-btn">Send</button>
+                </div>
             </div>
         </div>
 
-        <!-- BOTONES FIJOS (SOBRE TODO) -->
+        <!-- FIXED BUTTONS (ON TOP OF EVERYTHING) -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
-                    <img src="../images/lupa.png" alt="Atrás">
+                    <img src="../images/lupa.png" alt="Search">
                 </a>
             </button>
             <button class="nav-button" onclick="window.location.href = '../index.html'">
-                <img src="../images/botonhome.png" alt="Inicio">
+                <img src="../images/botonhome.png" alt="Home">
             </button>
-            <button class="nav-button" onclick="openApps()">
-                <img src="../images/atras.png" alt="Aplicaciones recientes">
+            <button class="nav-button" onclick="goBack()">
+                <img src="../images/atras.png" alt="Recent Apps">
             </button>
         </div>
     </div>
-    
-    <script src="../js/settings.js"></script>
+
+    <script src="../scripts.js"></script>
+    <script src="../js/messages.js"></script>
 </body>
 </html>

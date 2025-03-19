@@ -1,0 +1,113 @@
+/* estilos/mail.css */
+
+/* Encabezado de la interfaz de correo */
+.mail-header {
+    background-color: #f1f3f4;
+    padding: 10px;
+    border-bottom: 1px solid #dadce0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.mail-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #202124;
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.mail-tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    font-size: 14px;
+    color: #5f6368;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.tab.active {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+.tab:hover {
+    background-color: #e8f0fe;
+}
+
+/* Lista de correos */
+.mail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Cada correo */
+.mail-item {
+    position: relative;
+}
+
+.mail-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, border 0.2s ease; /* Animación para el borde y el scale */
+    border: 1px solid transparent; /* Borde transparente por defecto */
+}
+
+.mail-item img:hover {
+    transform: scale(1.05);
+    border: 1px solid #ccc; /* Borde gris fino al pasar el ratón */
+}
+
+/* Indicador de "no leído" */
+.mail-item[data-read="false"]::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.mail-item[data-read="true"]::before {
+    display: none;
+}
+
+/* Vista del correo dentro del móvil */
+.mail-view {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    padding: 10px;
+}
+
+.mail-view img {
+    width: 100%;
+    height: auto;
+    max-height: 70%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.mail-view .mail-content {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    overflow-y: auto;
+}
