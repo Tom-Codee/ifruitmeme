@@ -1,68 +1,78 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator - Mail</title>
+    <title>App - GTA Phone Simulator - Mail</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/mail.css">
 </head>
 <body>
     <div class="phone">
+        <!-- STATUS BAR (FIXED, NON-INTERACTIVE) -->
         <div class="status-bar">
             <div class="status-icons">
-                <img src="../images/señal.png" alt="Señal">
+                <img src="../images/señal.png" alt="Signal">
                 <img src="../images/segundologo.png" alt="Wi-Fi">
             </div>
             <span id="current-time"></span>
             <div class="battery-icon">
-                <img src="../images/battery.png" alt="Batería">
+                <img src="../images/battery.png" alt="Battery">
             </div>
         </div>
 
+        <!-- INTERACTIVE SCREEN (SCROLLABLE) -->
         <div class="screen">
             <div class="mail-header">
                 <h1 class="mail-title">Gmail</h1>
                 <div class="mail-tabs">
                     <span class="tab active">Inbox</span>
-                    <span class="tab" data-link="https://x.com/isolfruitcoin">Social</span>
-                    <span class="tab" data-link="https://t.me/+MXMOGUU1TqE4M2Q0">Promotions</span>
+                    <a href="https://x.com/iSolFruitCoin" target="_blank" class="tab">Social</a>
+                    <a href="https://t.me/+MXMOGUU1TqE4M2Q0" target="_blank" class="tab">Promotions</a>
                 </div>
             </div>
             <div class="mail-list">
-                <div class="mail-item" data-read="false">
-                    <img src="../images/mailplantilla-2.jpg" alt="Correo 1">
+                <div class="mail-item" data-read="false" data-sender="IsolFruit Team (team@isolfruit.com)" data-subject="The Next Big Meme Coin? Meet IsolFruit! 🚀" data-header="Don’t Miss Out on the Crypto Opportunity of the Year!" data-content="Introducing IsolFruit ($ISOL) – the memecoin inspired by the iconic iFruit phone from GTA V Online! 📱💰<br><br>With a passionate community, gaming nostalgia, and viral potential, IsolFruit is set to skyrocket. Early adopters have a chance to ride the wave before it takes off!<br><br>🚀 Why IsolFruit?<br>✅ A tribute to one of GTA’s most recognizable icons<br>✅ Community-driven project with explosive growth potential<br>✅ Meme power + gaming culture = viral success<br>✅ Limited early supply – get in before it’s too late!<br><br>Don’t wait! The crypto world moves fast, and opportunities like this don’t last long.<br><br>Join the movement now!<br><a href='https://t.me/+MXMOGUU1TqE4M2Q0' class='cta-button' target='_blank'>Join Now</a><br><br>#IsolFruit #NextBigCrypto #GTAInspired #MemeCoinRevolution<br><br><div class='social-links'><a href='https://twitter.com/isolfruit' target='_blank'>Twitter</a> | <a href='https://discord.gg/isolfruit' target='_blank'>Discord</a> | <a href='https://t.me/isolfruit' target='_blank'>Telegram</a></div>">
+                    <span class="mail-subject">The Next Big Meme Coin? Meet IsolFruit! 🚀</span>
+                    <span class="mail-date">14:32</span>
                 </div>
-                <div class="mail-item" data-read="false">
-                    <img src="../images/mails/mail2.jpg" alt="Correo 2">
+                <div class="mail-item" data-read="false" data-sender="Shiba Inu Devs (shibarmy@shibatoken.com)" data-subject="🚨 SHIBARIUM IS LIVE! Don’t Miss Out!" data-header="" data-content="Dear SHIB Army,<br><br>The wait is over! 🚀 Shibarium is officially live, bringing faster transactions and lower fees for all SHIB holders.<br><br>🔥 What’s new?<br>SHIB burns are increasing! 🔥<br>Bone staking is gaining traction! 🦴<br>Leash is getting new use cases! 🐕<br><br>Make sure you bridge your SHIB and join the revolution. The future of decentralized SHIB finance starts now!<br><br>Woof woof,<br>Shiba Inu Team">
+                    <span class="mail-subject">🚨 SHIBARIUM IS LIVE! Don’t Miss Out!</span>
+                    <span class="mail-date">09:15</span>
                 </div>
-                <div class="mail-item" data-read="false">
-                    <img src="../images/mails/mail3.jpg" alt="Correo 3">
+                <div class="mail-item" data-read="false" data-sender="PEPE Official (pepe@pepecoin.com)" data-subject="PEPE HOLDERS: Are You Ready for the Next Pump? 🐸💰" data-header="" data-content="Dear PEPE fam,<br><br>The frog army is stronger than ever, and we’re gearing up for some serious moves! 📈<br><br>🔹 New exchange listings coming!<br>🔹 Whale movements detected!<br>🔹 $PEPE trending across social media!<br><br>Make sure your bags are packed because this ride is about to get wild! Stay memetic, stay legendary! 🐸<br><br>LFG,<br>Team PEPE">
+                    <span class="mail-subject">PEPE HOLDERS: Are You Ready for the Next Pump? 🐸💰</span>
+                    <span class="mail-date">08:45</span>
                 </div>
-                <div class="mail-item" data-read="false">
-                    <img src="../images/mails/mail4.jpg" alt="Correo 4">
+                <div class="mail-item" data-read="false" data-sender="Floki Vikings (vikings@flokiinu.com)" data-subject="🚨 FLOKI HOLDERS – MASSIVE PARTNERSHIP ANNOUNCEMENT!" data-header="" data-content="Ahoy, Floki Vikings! ⚔️🚀<br><br>We’re proud to announce a strategic partnership with a major global brand! 🌍 This is a game-changer for $FLOKI, and it will push us even further towards mass adoption.<br><br>📢 Key Highlights:<br>✔️ More real-world utility for FLOKI<br>✔️ Expansion into new markets<br>✔️ Stronger community incentives<br><br>Prepare your longships and spread the word! The FLOKI era is just beginning!<br><br>To Valhalla! 🛡️🐕<br>Floki Inu Team">
+                    <span class="mail-subject">🚨 FLOKI HOLDERS – MASSIVE PARTNERSHIP ANNOUNCEMENT!</span>
+                    <span class="mail-date">07:20</span>
                 </div>
-                <div class="mail-item" data-read="false">
-                    <img src="../images/mails/mail5.jpg" alt="Correo 5">
+                <div class="mail-item" data-read="false" data-sender="Bonk Team (woof@bonkcoin.com)" data-subject="BONK BONK! 🚀 The Future of Solana’s #1 Memecoin!" data-header="" data-content="WOOF WOOF! 🐶<br><br>$BONK is making waves across the Solana ecosystem! Here’s why we’re more than just a meme:<br><br>🔥 1 TRILLION $BONK burned!<br>🔥 New Dapps & games powered by BONK!<br>🔥 Huge Solana partnerships in the works!<br><br>Don’t get left behind – the BONK train is moving FAST! Keep barking, keep hodling, and let’s send BONK to the stratosphere! 🚀<br><br>Much woof,<br>The BONK Team">
+                    <span class="mail-subject">BONK BONK! 🚀 The Future of Solana’s #1 Memecoin!</span>
+                    <span class="mail-date">06:10</span>
                 </div>
             </div>
             <div class="mail-view" style="display: none;">
-                <img src="" alt="Correo">
+                <div class="mail-sender"></div>
+                <div class="mail-subject"></div>
+                <div class="mail-header-content"></div>
                 <div class="mail-content"></div>
             </div>
         </div>
 
+        <!-- FIXED NAVIGATION BUTTONS -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
-                    <img src="../images/lupa.png" alt="Atrás">
+                    <img src="../images/lupa.png" alt="Search">
                 </a>
             </button>
             <button class="nav-button" onclick="window.location.href = '../index.html'">
-                <img src="../images/botonhome.png" alt="Inicio">
+                <img src="../images/botonhome.png" alt="Home">
             </button>
             <button class="nav-button" onclick="goBack()">
-                <img src="../images/atras.png" alt="Aplicaciones recientes">
+                <img src="../images/atras.png" alt="Recent Apps">
             </button>
         </div>
     </div>

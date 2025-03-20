@@ -1,54 +1,45 @@
 // js/mail.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Estado para rastrear si estamos en la vista de un correo
+    // State to track if we are viewing an email
     let isViewingMail = false;
 
-    // Referencias a los elementos
+    // References to elements
     const mailList = document.querySelector('.mail-list');
     const mailView = document.querySelector('.mail-view');
-    const mailViewImg = mailView.querySelector('img');
+    const mailSender = mailView.querySelector('.mail-sender');
+    const mailSubject = mailView.querySelector('.mail-subject');
+    const mailHeaderContent = mailView.querySelector('.mail-header-content');
     const mailContent = mailView.querySelector('.mail-content');
 
-    // Manejar clics en los correos
+    // Handle clicks on emails
     const mailItems = document.querySelectorAll('.mail-item');
     mailItems.forEach(item => {
-        const mailImg = item.querySelector('img');
         item.addEventListener('click', () => {
-            // Marcar como leído
+            // Mark as read
             item.dataset.read = 'true';
 
-            // Mostrar el correo en .mail-view
-            mailViewImg.src = mailImg.src;
-            mailViewImg.alt = mailImg.alt;
-            mailContent.textContent = item.dataset.content || 'No content available'; // Mostrar el texto del correo
+            // Show email in .mail-view
+            mailSender.textContent = item.dataset.sender || 'No sender available';
+            mailSubject.textContent = item.dataset.subject || 'No subject available';
+            mailHeaderContent.textContent = item.dataset.header || '';
+            mailContent.innerHTML = item.dataset.content || 'No content available';
             mailList.style.display = 'none';
             mailView.style.display = 'flex';
             isViewingMail = true;
         });
     });
 
-    // Manejar clics en las pestañas
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const link = tab.dataset.link;
-            if (link) {
-                window.open(link, '_blank'); // Abrir enlace en nueva pestaña
-            }
-        });
-    });
-
-    // Función para el botón de navegación
+    // Function for navigation button
     window.goBack = function() {
         if (isViewingMail) {
-            // Volver a la lista de correos
+            // Return to email list
             mailList.style.display = 'flex';
             mailView.style.display = 'none';
             isViewingMail = false;
         } else {
-            // Comportamiento original: abrir aplicaciones recientes
-            console.log("Abrir aplicaciones recientes");
+            // Original behavior: open recent apps
+            console.log("Open recent apps");
         }
     };
 });

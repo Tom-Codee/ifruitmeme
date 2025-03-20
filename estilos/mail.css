@@ -1,86 +1,103 @@
-/* estilos/mail.css */
+/* styles/mail.css */
 
-/* Encabezado de la interfaz de correo */
+/* Email Interface Header */
 .mail-header {
-    background-color: #f1f3f4;
-    padding: 10px;
-    border-bottom: 1px solid #dadce0;
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
     position: sticky;
     top: 0;
     z-index: 10;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .mail-title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 22px;
+    font-weight: 500;
     color: #202124;
     margin: 0;
-    margin-bottom: 5px;
-    font-family: 'Comic Sans MS', cursive;
+    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .mail-tabs {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .tab {
     font-size: 14px;
     color: #5f6368;
-    padding: 5px 10px;
+    padding: 8px 12px;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
+    border-radius: 20px;
+    transition: background-color 0.2s ease, color 0.2s ease;
     text-decoration: none;
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 .tab.active {
     background-color: #e8f0fe;
     color: #1a73e8;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .tab:hover {
-    background-color: #e8f0fe;
+    background-color: #f1f3f4;
+    color: #1a73e8;
 }
 
-/* Lista de correos */
+/* Email List */
 .mail-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 10px;
+    padding: 0;
+    background: #ffffff;
 }
 
-/* Cada correo */
+/* Each Email Item */
 .mail-item {
     position: relative;
-}
-
-.mail-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+    padding: 8px 25px;
+    border-bottom: 1px solid #e8ecef;
     cursor: pointer;
-    transition: transform 0.2s ease, border 0.2s ease; /* Animación para el borde y el scale */
-    border: 1px solid transparent; /* Borde transparente por defecto */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
 }
 
-.mail-item img:hover {
-    transform: scale(1.05);
-    border: 1px solid #ccc; /* Borde gris fino al pasar el ratón */
+.mail-item:hover {
+    background-color: #f7f8fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Indicador de "no leído" */
+.mail-subject {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000000;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mail-date {
+    font-size: 12px;
+    color: #5f6368;
+    white-space: nowrap;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Unread Indicator */
 .mail-item[data-read="false"]::before {
     content: '';
     position: absolute;
     left: 10px;
-    top: 10px;
-    width: 8px;
-    height: 8px;
-    background-color: red;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: #1a73e8;
     border-radius: 50%;
 }
 
@@ -88,26 +105,94 @@
     display: none;
 }
 
-/* Vista del correo dentro del móvil */
+/* Email View Inside the Phone */
 .mail-view {
     display: none;
     flex-direction: column;
     height: 100%;
-    padding: 10px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
 }
 
-.mail-view img {
-    width: 100%;
-    height: auto;
-    max-height: 70%;
-    object-fit: contain;
-    border-radius: 5px;
+.mail-sender {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 
-.mail-view .mail-content {
-    margin-top: 10px;
+.mail-subject {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mail-header-content {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a73e8;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mail-content {
     font-size: 14px;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.6;
     overflow-y: auto;
+    flex-grow: 1;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mail-content a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.mail-content a:hover {
+    text-decoration: underline;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #7bc0f9; /* Cambiado de azul (#1a73e8) a verde */
+    color: #ffffff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 15px 0;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #59aff6;
+}
+
+.social-links {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #5f6368;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-links a {
+    color: #1a73e8;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
 }
