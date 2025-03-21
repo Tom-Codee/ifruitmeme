@@ -1,0 +1,70 @@
+/* estilos/tasks.css */
+
+/* Tasks List */
+.tasks-list {
+    padding: 15px;
+    background: #F9F7EB; /* Color de fondo igual al del móvil (asumido como gris claro) */
+   }
+   
+   /* Tasks List Header */
+   .tasks-list h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #202124;
+    margin: 0 0 15px 0;
+    font-family: 'Roboto', sans-serif;
+   }
+   
+   /* Each Task */
+   .task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e8ecef;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    background: #F9F7EB; /* Fondo blanco para cada tarea para que contraste con el fondo del móvil */
+   }
+   
+   .task-item:hover {
+    background-color: #f7f8fa;
+   }
+   
+   /* Checkbox */
+   .task-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #5f6368;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    flex-shrink: 0;
+   }
+   
+   .task-item.completed .task-checkbox {
+    background-color: #000000;
+    border-color: #000000;
+   }
+   
+   .task-item.completed .task-checkbox::after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 14px;
+   }
+   
+   /* Task Text */
+   .task-text {
+    font-size: 16px;
+    color: #202124;
+    font-family: 'Roboto', sans-serif;
+    flex-grow: 1;
+   }
+   
+   .task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #5f6368;
+   }

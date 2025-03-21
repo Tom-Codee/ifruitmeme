@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App - GTA Phone Simulator - Contacts</title>
+    <link rel="stylesheet" href="../estilos/basic.css">
+    <link rel="stylesheet" href="../estilos/contacts.css">
+</head>
+<body>
+    <div class="phone">
+        <!-- STATUS BAR (FIXED, NON-INTERACTIVE) -->
+        <div class="status-bar">
+            <div class="status-icons">
+                <img src="../images/señal.png" alt="Signal">
+                <img src="../images/segundologo.png" alt="Wi-Fi">
+            </div>
+            <span id="current-time"></span>
+            <div class="battery-icon">
+                <img src="../images/battery.png" alt="Battery">
+            </div>
+        </div>
+
+        <!-- INTERACTIVE SCREEN (SCROLLABLE) -->
+        <div class="screen">
+            <!-- CONTACTS LIST -->
+            <div class="contacts-list">
+                <h1>Contacts</h1>
+                <div class="contact-item" data-name="Elon Musk" data-phone="+1 555-123-4567" data-email="elon@tesla.com">
+                    <span class="contact-initial">E</span>
+                    <span class="contact-name">Elon Musk</span>
+                </div>
+                <div class="contact-item" data-name="Donald Trump" data-phone="+1 555-987-6543" data-email="donald@trumporg.com">
+                    <span class="contact-initial">D</span>
+                    <span class="contact-name">Donald Trump</span>
+                </div>
+                <div class="contact-item" data-name="Michael Saylor" data-phone="+1 555-456-7890" data-email="michael@microstrategy.com">
+                    <span class="contact-initial">M</span>
+                    <span class="contact-name">Michael Saylor</span>
+                </div>
+                <div class="contact-item" data-name="Vitalik Buterin" data-phone="+1 555-321-6547" data-email="vitalik@ethereum.org">
+                    <span class="contact-initial">V</span>
+                    <span class="contact-name">Vitalik Buterin</span>
+                </div>
+                <div class="contact-item" data-name="Changpeng Zhao" data-phone="+1 555-654-3210" data-email="cz@binance.com">
+                    <span class="contact-initial">C</span>
+                    <span class="contact-name">Changpeng Zhao</span>
+                </div>
+                <div class="contact-item" data-name="Satoshi Nakamoto" data-phone="Unknown" data-email="satoshi@bitcoin.org">
+                    <span class="contact-initial">S</span>
+                    <span class="contact-name">Satoshi Nakamoto</span>
+                </div>
+            </div>
+
+            <!-- CONTACT VIEW -->
+            <div class="contact-view" style="display: none;">
+                <div class="contact-profile">
+                    <span class="contact-initial-large"></span>
+                    <h2 class="contact-name-header"></h2>
+                </div>
+                <div class="contact-actions">
+                    <button class="action-button message">Message</button>
+                    <button class="action-button call">Call</button>
+                    <button class="action-button video">Video</button>
+                </div>
+                <div class="contact-details">
+                    <p class="contact-phone-label">Mobile</p>
+                    <p class="contact-phone"></p>
+                    <p class="contact-email-label">Email</p>
+                    <p class="contact-email"></p>
+                </div>
+                <div class="contact-options">
+                    <button class="option-button">Share Contact</button>
+                    <button class="option-button">Add to Favorites</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- FIXED NAVIGATION BUTTONS -->
+        <div class="nav-buttons">
+            <button class="nav-button">
+                <a href="https://x.com/isolfruitcoin" target="_blank">
+                    <img src="../images/lupa.png" alt="Search">
+                </a>
+            </button>
+            <button class="nav-button" onclick="window.location.href = '../index.html'">
+                <img src="../images/botonhome.png" alt="Home">
+            </button>
+            <button class="nav-button" onclick="goBack()">
+                <img src="../images/atras.png" alt="Recent Apps">
+            </button>
+        </div>
+    </div>
+
+    <script src="../scripts.js"></script>
+    <script src="../js/contacts.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* styles/contacts.css */
+
+/* Contacts List */
+.contacts-list {
+    padding: 15px;
+    background: #212121; /* Fondo gris oscuro igual al del móvil */
+}
+
+.contacts-list h1 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Each Contact Item */
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+    background-color: #2a2a2a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Initial (Profile Picture Placeholder) */
+.contact-initial {
+    width: 40px;
+    height: 40px;
+    background-color: #5f6368;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-right: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Contact Name */
+.contact-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    flex-grow: 1;
+}
+
+/* Contact View */
+.contact-view {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+    background: #212121;
+}
+
+/* Contact Profile Section */
+.contact-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-initial-large {
+    width: 100px;
+    height: 100px;
+    background-color: #5f6368;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-name-header {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Contact Actions */
+.contact-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.action-button {
+    width: 60px;
+    height: 60px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.action-button.message {
+    background-color: #34c759;
+}
+
+.action-button.call {
+    background-color: #34c759;
+}
+
+.action-button.video {
+    background-color: #34c759;
+}
+
+.action-button:hover {
+    background-color: #4a4a4a;
+}
+
+.action-button.message:hover {
+    background-color: #2ea44f;
+}
+
+.action-button.call:hover {
+    background-color: #2ea44f;
+}
+
+.action-button.video:hover {
+    background-color: #2ea44f;
+}
+
+/* Contact Details */
+.contact-details {
+    background: #2a2a2a;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-phone-label, .contact-email-label {
+    font-size: 14px;
+    color: #a0a0a0;
+    margin: 0 0 5px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact-phone, .contact-email {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 15px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Contact Options */
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-button {
+    background: #2a2a2a;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    color: #1a73e8;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.option-button:hover {
+    background-color: #333;
+}

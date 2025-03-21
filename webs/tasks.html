@@ -1,58 +1,103 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator</title>
-    <link rel="stylesheet" href="../estilos/basic.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>App - GTA Phone Simulator - Tasks</title>
+ <link rel="stylesheet" href="../estilos/basic.css">
+ <link rel="stylesheet" href="../estilos/tasks.css">
 </head>
 <body>
+ <div class="phone">
+ <!-- STATUS BAR (FIXED, NON-INTERACTIVE) -->
+ <div class="status-bar">
+ <div class="status-icons">
+ <img src="../images/señal.png" alt="Signal">
+ <img src="../images/segundologo.png" alt="Wi-Fi">
+ </div>
+ <span id="current-time">12:00</span>
+ <div class="battery-icon">
+ <img src="../images/battery.png" alt="Battery">
+ </div>
+ </div>
 
-    <div class="phone">
-        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
-        <div class="status-bar">
-            <div class="status-icons">
-                <img src="../images/señal.png" alt="Señal">
-                <img src="../images/segundologo.png" alt="Wi-Fi">
-            </div>
-            <span id="current-time">12:00</span>
-            <div class="battery-icon">
-                <img src="../images/battery.png" alt="Batería">
-            </div>
-        </div>
+ <!-- INTERACTIVE SCREEN (SCROLLABLE) -->
+ <div class="screen">
+ <!-- TASKS LIST -->
+ <div class="tasks-list">
+ <h1>Tasks</h1>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🎯 Reach $10K Market Cap</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🚀 Reach $50K Market Cap</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">💰 Reach $100K Market Cap</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🏆 Reach $1M Market Cap</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🔥 Gain 100 holders</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🌍 Get 100 X followers</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🌍 Get 500 X followers</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🌍 Get 1k X followers</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">📢 Get 50 Telegram members</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">📢 Get 100 Telegram members</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">📢 Get 500 Telegram members</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">❤️ Like & Retweet our pinned post on X</span>
+ </div>
+ <div class="task-item" data-completed="false">
+ <span class="task-checkbox"></span>
+ <span class="task-text">🎮 Post a meme about GTA V & iFruit using #IsolFruit</span>
+ </div>
+ </div>
+ </div>
 
-        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
-        <div class="screen">
-            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
+ <!-- FIXED NAVIGATION BUTTONS -->
+ <div class="nav-buttons">
+ <button class="nav-button">
+ <a href="https://x.com/isolfruitcoin" target="_blank">
+ <img src="../images/lupa.png" alt="Search">
+ </a>
+ </button>
+ <button class="nav-button" onclick="window.location.href = '../index.html'">
+ <img src="../images/botonhome.png" alt="Home">
+ </button>
+ <button class="nav-button" onclick="openApps()">
+ <img src="../images/atras.png" alt="Recent Apps">
+ </button>
+ </div>
+ </div>
 
-
-            <div class="test-content">
-                <div class="section red">Sección 1</div>
-                <div class="section blue">Sección 2</div>
-                <div class="section green">Sección 3</div>
-                <div class="section yellow">Sección 4</div>
-                <div class="section purple">Sección 5</div>
-            </div>
-        </div>
-
-        <!-- BOTONES FIJOS (SOBRE TODO) -->
-        <div class="nav-buttons">
-            <button class="nav-button">
-                <a href="https://x.com/isolfruitcoin" target="_blank">
-                    <img src="../images/lupa.png" alt="Atrás">
-                </a>
-            </button>
-            <button class="nav-button" onclick="window.location.href = '../index.html'">
-                <img src="../images/botonhome.png" alt="Inicio">
-            </button>
-            <button class="nav-button" onclick="openApps()">
-                <img src="../images/atras.png" alt="Aplicaciones recientes">
-            </button>
-        </div>
-    </div>
-
-    
-    
-    <script src="../js/settings.js"></script>
+ <script src="../js/settings.js"></script>
+ <script src="../js/tasks.js"></script>
 </body>
 </html>

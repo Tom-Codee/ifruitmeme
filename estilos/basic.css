@@ -100,7 +100,7 @@ body {
 .screen::after {
     content: "";
     display: block;
-    height: 1000px; /* Permite scroll */
+    height: 300px; /* Permite scroll */
 }
 
 /* 🎮 BOTONES DE NAVEGACIÓN (FIJOS Y SOBRE TODO) */
