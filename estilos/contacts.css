@@ -1,5 +1,10 @@
 /* styles/contacts.css */
 
+/* Custom Screen Background for Contacts Page */
+.screen {
+    background-color: #212121; /* Fondo gris oscuro igual al del móvil */
+}
+
 /* Contacts List */
 .contacts-list {
     padding: 15px;

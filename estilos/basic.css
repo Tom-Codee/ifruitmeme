@@ -8,7 +8,6 @@
     transition: background-color 0.3s ease-in-out;
 }
 
-
 body {
     display: flex;
     justify-content: center;
@@ -46,31 +45,59 @@ body {
 /* 📟 BARRA DE ESTADO FIJA */
 .status-bar {
     position: absolute;
-    width: 50px;
-    height: 100%;
+    width: 450px; /* Full width to match the horizontal phone */
+    height: 82px; /* Same height as vertical */
     background: black;
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    left: 40px;
-    top: 0;
+    justify-content: space-between; /* Distribute icons and time */
+    left: 11px;
+    top: 478px;
     z-index: 3;
+    transform: rotate(-90deg); /* Rotate to match orientation */
+    transform-origin: top left;
 }
 
 /* Iconos dentro de la barra */
-.status-icons img, 
+.status-icons,
+.battery-icon {
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
 
+.status-icons img,
 .battery-icon img {
-    width: 30px;
-    transform: rotate(-90deg); /* Rotamos los iconos */
+    height: 32px; /* Same size as vertical */
+    transform: rotate(0deg); /* Adjust for horizontal orientation */
+}
+
+.status-icons {
+    left: 10px; /* Position similar to vertical */
+    top: 30px;
+}
+
+.status-icons img:first-child {
+    margin-right: 10px; /* Space between signal and Wi-Fi */
+}
+
+.battery-icon {
+    right: 10px; /* Position battery on the right */
+    top: 30px;
 }
 
 #current-time {
-    transform: rotate(-90deg);
-    font-size: 12px;
+    position: absolute;
+    left: 50%;
+    top: 35px; /* Centered vertically within the 82px height */
+    transform: translateX(-50%) rotate(0deg); /* Center and rotate */
+    font-size: 20px; /* Same as vertical */
     font-weight: bold;
+    font-family: 'Comic Sans MS', cursive; /* Same font as vertical */
+    white-space: nowrap; /* Prevent text wrapping */
+    width: auto; /* Allow natural width */
+    text-align: center;
 }
 
 /* 📲 PANTALLA INTERACTIVA */
@@ -89,7 +116,6 @@ body {
     pointer-events: all; /* Se puede interactuar con la pantalla */
     overflow-x: hidden; /* 🔹 Evita desplazamiento horizontal */
 }
-
 
 /* Ocultar scrollbar en Chrome y Safari */
 .screen::-webkit-scrollbar {

@@ -1,9 +1,10 @@
+/* styles/draw.css */
 
-/* Contenedor del Paint */
+/* Paint Container */
 .paint-container {
     position: relative;
-    width: 90%; /* 🔹 Ocupará todo el ancho de .screen */
-    max-width: 90%; /* 🔹 Evita que sea más grande que .screen */
+    width: 90%;
+    max-width: 90%;
     background: white;
     border: 4px solid #000;
     border-radius: 10px;
@@ -13,11 +14,11 @@
     left: 20px;
 }
 
-/* Lienzo de dibujo */
+/* Canvas */
 canvas {
     width: 100%;
     height: 250px;
-    display: block; /* 🔹 Evita espacios extra por inline-block */
+    display: block;
     margin: 0;
     padding: 0;
     background: #F9F7EA;
@@ -25,47 +26,54 @@ canvas {
     cursor: crosshair;
 }
 
-
-/* Barra de herramientas */
+/* Toolbar */
 .toolbar {
     display: flex;
-    justify-content: space-between; /* 🔹 Reduce el espacio entre botones */
+    justify-content: space-between;
     align-items: center;
-    padding: 5px; /* 🔹 Reduce el espacio interno de la toolbar */
+    padding: 5px;
     background: #eee;
     border-top: 2px solid #000;
-    gap: 5px; /* 🔹 Espacio reducido entre los botones */
+    gap: 5px;
 }
 
-/* Botones */
-button {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 4px 8px;
+/* Toolbar Button Container */
+.toolbar-button {
+    position: relative;
+    width: 60px; /* Ajusta según el tamaño de tus imágenes */
+    height: 30px; /* Ajusta según el tamaño de tus imágenes */
+    background: url('../images/draw/button-border.png') no-repeat center center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
 }
 
-
-
-/* Botón de borrar en rojo */
-#clearCanvas {
-    background: red;
+/* Toolbar Button Image */
+.toolbar-button img {
+    width: 80%; /* Ajusta para que el texto quepa dentro del borde */
+    height: auto;
 }
 
-#clearCanvas:hover {
-    background: darkred;
+/* Modal Button Container */
+.modal-button {
+    position: relative;
+    width: 80px; /* Ajusta según el tamaño de tus imágenes */
+    height: 40px; /* Ajusta según el tamaño de tus imágenes */
+    background: url('../images/button-border.png') no-repeat center center;
+    background-size: contain;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 5px;
 }
 
-/* Botón de la goma */
-#eraser {
-    background: gray;
-}
-
-#eraser.active {
-    background: black;
+/* Modal Button Image */
+.modal-button img {
+    width: 80%; /* Ajusta para que el texto quepa dentro del borde */
+    height: auto;
 }
 
 /* Inputs */
@@ -74,80 +82,18 @@ input[type="range"] {
     cursor: pointer;
 }
 
-/* Botón de compartir en X */
-#shareTwitter {
-    background: #1da1f2;
+/* Eraser (Active State) */
+#eraser.active {
+    filter: brightness(0.5); /* Efecto visual para indicar que está activo */
 }
 
-#shareTwitter:hover {
-    background: #0d8ddc;
+/* Hover Effects */
+.toolbar-button:hover,
+.modal-button:hover {
+    filter: brightness(0.9); /* Efecto de hover para las imágenes */
 }
 
-
-/* 🎨 Estilos de la ventana modal */
-.modal {
-    display: none; /* 🔹 Oculta la ventana al inicio */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.3s ease-in-out; /* 🔹 Transición suave */
-    opacity: 0;
-    z-index: 9999;
-}
-
-/* 🔹 Cuando se activa el modal */
-.modal.show {
-    display: flex; /* 🔹 Se muestra */
-    opacity: 1;
-}
-
-/* 💠 Contenido del modal */
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.3s ease-in-out; /* Animación */
-}
-
-/* ✅ Botón de confirmación */
-#confirmUpload {
-    background: #007bff;
-    color: white;
-}
-
-#confirmUpload:hover {
-    background: #0056b3;
-}
-
-/* ❌ Botón de cancelar */
-#closeModal {
-    background: red;
-    color: white;
-}
-
-#closeModal:hover {
-    background: darkred;
-}
-
-/* 🔹 Animación de entrada */
-@keyframes fadeIn {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-/* 📦 Contenedor de la galería */
+/* Gallery Container */
 #galleryContainer {
     width: 90%;
     max-width: 900px;
@@ -156,15 +102,16 @@ input[type="range"] {
     background: transparent;
     padding: 20px;
 }
-/* 📌 Galería con 3 imágenes por fila */
+
+/* Gallery Grid */
 #gallery {
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
-    gap: 20px; /* Espacio entre imágenes */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     justify-content: center;
 }
 
-/* 🎨 Contenedor de cada imagen */
+/* Gallery Item */
 .gallery-item {
     display: flex;
     justify-content: center;
@@ -177,10 +124,54 @@ input[type="range"] {
     overflow: hidden;
 }
 
-/* 📷 Ajuste de imagen para que sea rectangular y no cuadrada */
+/* Gallery Image */
 .gallery-img {
-    max-width: 100%; /* ✅ Se adapta al contenedor */
-    height: auto; /* ✅ Mantiene la proporción */
-    object-fit: contain; 
-    border: none; /* ❌ Elimina borde rojo */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: none;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    z-index: 9999;
+}
+
+/* Show Modal */
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Animation */
+@keyframes fadeIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

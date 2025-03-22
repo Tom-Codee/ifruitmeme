@@ -1,118 +1,109 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator</title>
+    <title>App - GTA Phone Simulator - Web</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/web.css">
     <!-- Script de Google Custom Search -->
     <script async src="https://cse.google.com/cse.js?cx=10c0dba6931f94fc3"></script>
 </head>
 <body>
-
     <div class="phone">
-        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
+        <!-- STATUS BAR (FIXED, NON-INTERACTIVE) -->
         <div class="status-bar">
             <div class="status-icons">
-                <img src="../images/señal.png" alt="Señal">
+                <img src="../images/señal.png" alt="Signal">
                 <img src="../images/segundologo.png" alt="Wi-Fi">
             </div>
             <span id="current-time">12:00</span>
             <div class="battery-icon">
-                <img src="../images/battery.png" alt="Batería">
+                <img src="../images/battery.png" alt="Battery">
             </div>
         </div>
 
-        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
+        <!-- INTERACTIVE SCREEN (SCROLLABLE) -->
         <div class="screen">
-            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
+            <!-- GOOGLE SEARCH CONTAINER -->
             <div class="google-search-container">
-                <!-- Interfaz que imita la página principal de Google -->
+                <!-- Google Home Interface -->
                 <div class="google-home" id="google-home">
                     <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo" class="google-logo">
                     <div class="search-bar">
-                        <input type="text" id="search-input" placeholder="Buscar en Google..." onkeypress="handleSearch(event)">
+                        <input type="text" id="search-input" placeholder="Search Google..." onkeypress="handleSearch(event)">
                         <button onclick="performSearch()" class="search-icon">
-                            <img src="https://www.google.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Buscar">
+                            <img src="https://www.google.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Search">
                         </button>
                     </div>
                     <div class="search-buttons">
-                        <button onclick="performSearch()">Buscar con Google</button>
-                        <button onclick="performSearch()">Voy a tener suerte</button>
+                        <button onclick="performSearch()">Google Search</button>
+                        <button onclick="performSearch()">I'm Feeling Lucky</button>
                     </div>
                 </div>
-        
-                <!-- Contenedor para los resultados simulados -->
+
+                <!-- Search Results Container -->
                 <div id="search-results" class="search-results" style="display: none;">
                     <div class="search-header">
                         <button onclick="goBack()" class="back-button">←</button>
                         <input type="text" id="search-input-results" onkeypress="handleSearch(event)">
-                        <button onclick="performSearch()">Buscar</button>
+                        <button onclick="performSearch()">Search</button>
                     </div>
-                    <div id="results-list"></div>
+                    <!-- Google Custom Search Results -->
+                    <div class="gcse-searchresults-only"></div>
                 </div>
             </div>
         </div>
-        
-        <script>
-            function handleSearch(event) {
-                if (event.key === "Enter") {
-                    performSearch();
-                }
-            }
-        
-            function performSearch() {
-                const query = document.getElementById("search-input").value || document.getElementById("search-input-results").value;
-                if (query.trim() === "") return;
-        
-                // Ocultar la interfaz de búsqueda y mostrar el contenedor de resultados
-                document.getElementById("google-home").style.display = "none";
-                const resultsContainer = document.getElementById("search-results");
-                resultsContainer.style.display = "block";
-        
-                // Actualizar el campo de búsqueda en la página de resultados
-                document.getElementById("search-input-results").value = query;
-        
-                // Simular resultados
-                const resultsList = document.getElementById("results-list");
-                resultsList.innerHTML = `
-                    <div class="result-item">
-                        <h3><a href="#">Resultado 1 para "${query}"</a></h3>
-                        <p>Este es un resultado simulado para la consulta "${query}".</p>
-                    </div>
-                    <div class="result-item">
-                        <h3><a href="#">Resultado 2 para "${query}"</a></h3>
-                        <p>Otro resultado simulado para la consulta "${query}".</p>
-                    </div>
-                `;
-            }
-        
-            function goBack() {
-                document.getElementById("google-home").style.display = "flex";
-                document.getElementById("search-results").style.display = "none";
-                document.getElementById("search-input").value = "";
-            }
-        </script>
 
-        <!-- BOTONES FIJOS (SOBRE TODO) -->
+        <!-- FIXED NAVIGATION BUTTONS -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
-                    <img src="../images/lupa.png" alt="Atrás">
+                    <img src="../images/lupa.png" alt="Search">
                 </a>
             </button>
             <button class="nav-button" onclick="window.location.href = '../index.html'">
-                <img src="../images/botonhome.png" alt="Inicio">
+                <img src="../images/botonhome.png" alt="Home">
             </button>
             <button class="nav-button" onclick="openApps()">
-                <img src="../images/atras.png" alt="Aplicaciones recientes">
+                <img src="../images/atras.png" alt="Recent Apps">
             </button>
         </div>
     </div>
 
-    <script src="../js/settings.js"></script>
-    
+    <script>
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                performSearch();
+            }
+        }
 
+        function performSearch() {
+            const query = document.getElementById("search-input").value || document.getElementById("search-input-results").value;
+            if (query.trim() === "") return;
+
+            // Ocultar la interfaz de búsqueda y mostrar el contenedor de resultados
+            document.getElementById("google-home").style.display = "none";
+            const resultsContainer = document.getElementById("search-results");
+            resultsContainer.style.display = "block";
+
+            // Actualizar el campo de búsqueda en la página de resultados
+            document.getElementById("search-input-results").value = query;
+
+            // Realizar la búsqueda con Google Custom Search
+            const searchElement = document.querySelector('.gcse-searchresults-only');
+            searchElement.setAttribute('data-query', query);
+            google.search.cse.element.getElement('searchresults-only0').execute(query);
+        }
+
+        function goBack() {
+            document.getElementById("google-home").style.display = "flex";
+            document.getElementById("search-results").style.display = "none";
+            document.getElementById("search-input").value = "";
+        }
+    </script>
+
+    <script src="../js/settings.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

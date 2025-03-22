@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator</title>
+    <title>App - GTA Phone Simulator - Draw</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/draw.css">
-    
 </head>
-<body class="you-draw-page"></body>
-
+<body class="you-draw-page">
     <div class="phone">
-        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
+        
+
         <div class="status-bar">
             <div class="status-icons">
                 <img src="../images/señal.png" alt="Señal">
@@ -23,9 +22,10 @@
             </div>
         </div>
 
-        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
+
+        <!-- INTERACTIVE SCREEN (SCROLLABLE) -->
         <div class="screen">
-            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
+            <!-- PAINT CONTAINER -->
             <div class="paint-container">
                 <canvas id="paintCanvas"></canvas>
                 <div class="toolbar">
@@ -34,52 +34,67 @@
                     
                     <label for="brushSize">Size:</label>
                     <input type="range" id="brushSize" min="1" max="20" value="5">
-                    <button id="eraser">Eraser</button>
-                    <button id="clearCanvas">Clean</button>
-                    <button id="downloadCanvas">Download</button>
-                    <button id="shareTwitter">Share on X</button>
-                    <button id="uploadButton">Upload</button> 
+                    
+                    <div class="toolbar-button">
+                        <img id="eraser" src="../images/draw/erase.png" alt="Eraser">
+                    </div>
+                    <div class="toolbar-button">
+                        <img id="clearCanvas" src="../images/draw/clear.png" alt="Clear">
+                    </div>
+                    <div class="toolbar-button">
+                        <img id="downloadCanvas" src="../images/draw/down.png" alt="Download">
+                    </div>
+                    <div class="toolbar-button">
+                        <img id="shareTwitter" src="../images/draw/x.png" alt="Share on X">
+                    </div>
+                    <div class="toolbar-button">
+                        <img id="uploadButton" src="../images/draw/upload.png" alt="Upload">
+                    </div>
                 </div>
             </div>
             
+            <!-- GALLERY -->
             <div id="galleryContainer">
-                <h2>Gallery of drawings</h2>
+                <h2>Gallery of Drawings</h2>
                 <div id="gallery"></div>
             </div>
             
-            <!-- Modal para subir la imagen -->
+            <!-- UPLOAD MODAL -->
             <div id="uploadModal" class="modal">
                 <div class="modal-content">
-                    <h2>UPLOAD DRAW</h2>
-                    <label for="userWallet">NAME:</label>
+                    <h2>Upload Drawing</h2>
+                    <label for="userWallet">Name:</label>
                     <input type="text" id="userWallet" placeholder="Enter the name of the drawing" required>
                     
-                    <button id="confirmUpload">UPLOAD </button>
-                    <button id="closeModal">Cancel </button>
+                    <div class="modal-button">
+                        <img id="confirmUpload" src="../images/draw/confirm.png" alt="Confirm Upload">
+                    </div>
+                    <div class="modal-button">
+                        <img id="closeModal" src="../images/draw/cancel.png" alt="Cancel">
+                    </div>
                 </div>
             </div>
-
-
-
         </div>
 
-        <!-- BOTONES FIJOS (SOBRE TODO) -->
+        <!-- FIXED NAVIGATION BUTTONS -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
-                    <img src="../images/lupa.png" alt="Atrás">
+                    <img src="../images/lupa.png" alt="Search">
                 </a>
             </button>
             <button class="nav-button" onclick="window.location.href = '../index.html'">
-                <img src="../images/botonhome.png" alt="Inicio">
+                <img src="../images/botonhome.png" alt="Home">
             </button>
             <button class="nav-button" onclick="openApps()">
-                <img src="../images/atras.png" alt="Aplicaciones recientes">
+                <img src="../images/atras.png" alt="Recent Apps">
             </button>
         </div>
     </div>
     
     <script src="../js/draw.js"></script>
     <script src="../js/settings.js"></script>
+    <script src="../script.js"></script>
+
 </body>
 </html>

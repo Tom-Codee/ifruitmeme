@@ -1,13 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Actualizar hora
-    function updateTime() {
-        const now = new Date();
-        document.getElementById('current-time').textContent = now.toLocaleTimeString();
-    }
-    setInterval(updateTime, 1000);
-    updateTime();
-
-
+   
     //dibujar
     const canvas = document.getElementById("paintCanvas");
     if (canvas) {
