@@ -6,8 +6,10 @@
     <title>App - GTA Phone Simulator - Web</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/web.css">
-    <!-- Google Custom Search Script -->
-    <script async src="https://cse.google.com/cse.js?cx=10c0dba6931f94fc3"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
+
+    
 </head>
 <body>
     <div class="phone">
@@ -25,32 +27,31 @@
 
         <!-- Interactive Screen -->
         <div class="screen">
-            <div class="google-search-container">
-                <!-- Google Home Interface -->
-                <div class="google-home" id="google-home">
-                    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo" class="google-logo">
-                    <div class="search-bar">
-                        <input type="text" id="search-input" placeholder="Search Google..." onkeypress="handleSearch(event)">
-                        <button onclick="performSearch()" class="search-icon">
-                            <img src="https://www.google.com/images/branding/googlemic/2x/googlemic_color_24dp.png" alt="Search">
-                        </button>
-                    </div>
-                    <div class="search-buttons">
-                        <button onclick="performSearch()">Google Search</button>
-                        <button onclick="performLuckySearch()">I'm Feeling Lucky</button>
-                    </div>
+           
+            <div class="wiki-search-app">
+                <!-- Home Screen -->
+                <div id="wikiHome">
+                  <h2>Internet Search</h2>
+                  <p>Find knowledge without leaving your phone.</p>
+                  <div class="wiki-search-bar">
+                    <input type="text" id="wikiInput" placeholder="E.g. artificial intelligence" onkeypress="handleWikiSearch(event)">
+                    <button onclick="searchWiki()">🔍</button>
+                  </div>
                 </div>
-
-                <!-- Search Results Container -->
-                <div id="search-results" class="search-results" style="display: none;">
-                    <div class="search-header">
-                        <button onclick="goBack()" class="back-button">←</button>
-                        <input type="text" id="search-input-results" onkeypress="handleSearch(event)">
-                        <button onclick="performSearch()">Search</button>
-                    </div>
-                    <div class="gcse-searchresults-only" data-enableHistory="false"></div>
+              
+                <!-- Result Viewer -->
+                <div id="wikiResultView" style="display: none;">
+                  <div class="wiki-toolbar">
+                    <button onclick="goBackWiki()">🔙 Back</button>
+                  </div>
+                  <iframe id="wikiViewer"></iframe>
                 </div>
-            </div>
+              </div>
+              
+              
+              
+              
+  
         </div>
 
         <!-- Navigation Buttons -->
@@ -69,53 +70,9 @@
         </div>
     </div>
 
-    <script>
-        function handleSearch(event) {
-            if (event.key === "Enter") {
-                performSearch();
-            }
-        }
-
-        function performSearch() {
-            const query = document.getElementById("search-input").value || document.getElementById("search-input-results").value;
-            if (!query.trim()) return;
-
-            // Switch to results view
-            document.getElementById("google-home").style.display = "none";
-            const resultsContainer = document.getElementById("search-results");
-            resultsContainer.style.display = "block";
-
-            // Update results input
-            document.getElementById("search-input-results").value = query;
-
-            // Execute Google CSE search
-            try {
-                const cseElement = google.search.cse.element.getElement("searchresults-only0");
-                if (cseElement) {
-                    cseElement.execute(query);
-                } else {
-                    console.error("Google CSE element not found.");
-                }
-            } catch (error) {
-                console.error("Error executing Google CSE search:", error);
-            }
-        }
-
-        function performLuckySearch() {
-            const query = document.getElementById("search-input").value;
-            if (!query.trim()) return;
-            window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}&btnI`, '_blank');
-        }
-
-        function goBack() {
-            document.getElementById("google-home").style.display = "flex";
-            document.getElementById("search-results").style.display = "none";
-            document.getElementById("search-input").value = "";
-            document.getElementById("search-input-results").value = "";
-        }
-    </script>
 
     <script src="../js/settings.js"></script>
     <script src="../script.js"></script>
+    <script src="../js/web.js"></script>
 </body>
 </html>

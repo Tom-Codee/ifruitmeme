@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const item = new ClipboardItem({ "image/png": blob });
                     navigator.clipboard.write([item]).then(() => {
                         alert("✅Image copied! You can now paste it into a tweet.");
-                        const tweetText = encodeURIComponent("Check out my drawing on $TOM🎨's website \nWeb:https://thisisjusttom.netlify.app/ \nX:@ThisIsJustTom\nTG: https://t.me/Tom_Coin_TG   \n\n🔥#TomCoin #memecoin #solana #drawingpage #crypto");
+                        const tweetText = encodeURIComponent("Check out my drawing on $ISOLFRUIT🎨's website \nWeb:https://isolfruit.com\nX:@iSolFruitCoin\nTG:https://t.me/GTAPhoneSol   \n\n🔥#isolfruit #memecoin #solana #drawingpage #crypto");
                         const tweetUrl = "https://x.com/intent/tweet?text=" + tweetText;
                         window.open(tweetUrl, "_blank");
                     }).catch(err => console.error("Error copiando imagen:", err));
