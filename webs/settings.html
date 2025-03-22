@@ -6,11 +6,11 @@
     <title>Aplicación - GTA Phone Simulator</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet"> <!-- Handwritten font -->
 </head>
 <body>
-
     <div class="phone">
-        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
+        <!-- Status Bar -->
         <div class="status-bar">
             <div class="status-icons">
                 <img src="../images/señal.png" alt="Señal">
@@ -22,28 +22,35 @@
             </div>
         </div>
 
-        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
+        <!-- Interactive Screen -->
         <div class="screen">
-            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
-
-            <div class="theme-selector">
-                <h2 class="settings-title">Choose Your Theme</h2>
-            <div class="theme-container">
-                <div class="theme-box" data-theme="default" style="background-color: #F9F7EB;"><span>Default</span></div>
-                <div class="theme-box" data-theme="red" style="background-color: #d11010;"></div>
-                <div class="theme-box" data-theme="blue" style="background-color: #0033cc;"></div>
-                <div class="theme-box" data-theme="green" style="background-color: #1d6b1d;"></div>
-                <div class="theme-box" data-theme="purple" style="background-color: #5a2d82;"></div>
-                <div class="theme-box" data-theme="yellow" style="background-color: #f4c542;"></div>
+            <div class="settings-container">
+                <h2 class="settings-title">Select Your Style</h2>
+                <p class="settings-subtitle">Personalize your phone with a unique theme</p>
+                <div class="theme-selector">
+                    <div class="theme-box" data-theme="default">
+                        <span class="theme-label">Classic</span>
+                    </div>
+                    <div class="theme-box" data-theme="red">
+                        <span class="theme-label">Crimson</span>
+                    </div>
+                    <div class="theme-box" data-theme="blue">
+                        <span class="theme-label">Sapphire</span>
+                    </div>
+                    <div class="theme-box" data-theme="green">
+                        <span class="theme-label">Emerald</span>
+                    </div>
+                    <div class="theme-box" data-theme="purple">
+                        <span class="theme-label">Amethyst</span>
+                    </div>
+                    <div class="theme-box" data-theme="yellow">
+                        <span class="theme-label">Golden</span>
+                    </div>
+                </div>
             </div>
-            </div>
-
-
-
-
         </div>
 
-        <!-- BOTONES FIJOS (SOBRE TODO) -->
+        <!-- Navigation Buttons -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">

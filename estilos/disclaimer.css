@@ -1,0 +1,57 @@
+/* Estilos para el disclaimer */
+.disclaimer {
+    padding: 20px;
+    color: #333; /* Color oscuro para contraste */
+    font-family: 'Caveat', cursive; /* Fuente manuscrita elegante */
+    font-size: 18px; /* Tamaño base para el texto */
+    line-height: 1.5; /* Espaciado entre líneas para legibilidad */
+    text-align: justify; /* Justificar el texto */
+    overflow-y: auto; /* Permitir scroll vertical si el contenido es largo */
+    height: 100%; /* Ocupa todo el alto de .screen */
+    box-sizing: border-box;
+}
+
+/* Estilo para el logo */
+.disclaimer-logo {
+    display: block;
+    margin: 0 auto 20px auto; /* Centrado con margen inferior */
+    height: 40px; /* Ajusta según el tamaño de tu logo */
+    width: auto; /* Mantiene la proporción */
+    object-fit: contain;
+}
+
+/* Estilo para los encabezados */
+.disclaimer h1 {
+    font-size: 28px; /* Título principal más grande */
+    font-weight: 700; /* Negrita */
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.disclaimer h2 {
+    font-size: 22px; /* Subtítulos */
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+/* Estilo para los párrafos */
+.disclaimer p {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Estilo para el copyright */
+.disclaimer .copyright {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    color: #555; /* Color más claro para el copyright */
+}
+
+/* Ocultar scrollbar en Chrome y Safari */
+.screen::-webkit-scrollbar {
+    display: none;
+}

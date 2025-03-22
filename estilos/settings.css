@@ -1,30 +1,72 @@
-
-/* Opciones de tema */
-.theme-options {
+/* Settings-specific styles */
+.settings-container {
+    padding: 20px;
+    text-align: center;
     display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically if height allows */
+    height: 100%; /* Ensures it takes full screen height */
 }
 
-/* Cuadrados de selección de tema */
+.settings-title {
+    font-family: 'Caveat', cursive; /* Handwritten font */
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.settings-subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Theme Selector */
+.theme-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers items horizontally */
+    gap: 15px;
+    max-width: 500px; /* Limits width for better control */
+    margin: 0 auto; /* Centers the container itself */
+}
+
 .theme-box {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
     cursor: pointer;
-    border: 2px solid transparent;
-    transition: transform 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
 }
 
-/* Efecto al pasar el mouse */
 .theme-box:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Colores de cada opción */
-.theme-box.red { background-color: red; }
-.theme-box.blue { background-color: blue; }
-.theme-box.green { background-color: green; }
-.theme-box.purple { background-color: purple; }
-.theme-box.yellow { background-color: yellow; }
+.theme-box span.theme-label {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 2;
+}
+
+/* Theme Colors */
+.theme-box[data-theme="default"] { background-color: #F9F7EB; }
+.theme-box[data-theme="red"] { background-color: #d11010; }
+.theme-box[data-theme="blue"] { background-color: #0033cc; }
+.theme-box[data-theme="green"] { background-color: #1d6b1d; }
+.theme-box[data-theme="purple"] { background-color: #5a2d82; }
+.theme-box[data-theme="yellow"] { background-color: #f4c542; }

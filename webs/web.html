@@ -6,12 +6,12 @@
     <title>App - GTA Phone Simulator - Web</title>
     <link rel="stylesheet" href="../estilos/basic.css">
     <link rel="stylesheet" href="../estilos/web.css">
-    <!-- Script de Google Custom Search -->
+    <!-- Google Custom Search Script -->
     <script async src="https://cse.google.com/cse.js?cx=10c0dba6931f94fc3"></script>
 </head>
 <body>
     <div class="phone">
-        <!-- STATUS BAR (FIXED, NON-INTERACTIVE) -->
+        <!-- Status Bar -->
         <div class="status-bar">
             <div class="status-icons">
                 <img src="../images/señal.png" alt="Signal">
@@ -23,9 +23,8 @@
             </div>
         </div>
 
-        <!-- INTERACTIVE SCREEN (SCROLLABLE) -->
+        <!-- Interactive Screen -->
         <div class="screen">
-            <!-- GOOGLE SEARCH CONTAINER -->
             <div class="google-search-container">
                 <!-- Google Home Interface -->
                 <div class="google-home" id="google-home">
@@ -38,7 +37,7 @@
                     </div>
                     <div class="search-buttons">
                         <button onclick="performSearch()">Google Search</button>
-                        <button onclick="performSearch()">I'm Feeling Lucky</button>
+                        <button onclick="performLuckySearch()">I'm Feeling Lucky</button>
                     </div>
                 </div>
 
@@ -49,13 +48,12 @@
                         <input type="text" id="search-input-results" onkeypress="handleSearch(event)">
                         <button onclick="performSearch()">Search</button>
                     </div>
-                    <!-- Google Custom Search Results -->
-                    <div class="gcse-searchresults-only"></div>
+                    <div class="gcse-searchresults-only" data-enableHistory="false"></div>
                 </div>
             </div>
         </div>
 
-        <!-- FIXED NAVIGATION BUTTONS -->
+        <!-- Navigation Buttons -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
@@ -80,26 +78,40 @@
 
         function performSearch() {
             const query = document.getElementById("search-input").value || document.getElementById("search-input-results").value;
-            if (query.trim() === "") return;
+            if (!query.trim()) return;
 
-            // Ocultar la interfaz de búsqueda y mostrar el contenedor de resultados
+            // Switch to results view
             document.getElementById("google-home").style.display = "none";
             const resultsContainer = document.getElementById("search-results");
             resultsContainer.style.display = "block";
 
-            // Actualizar el campo de búsqueda en la página de resultados
+            // Update results input
             document.getElementById("search-input-results").value = query;
 
-            // Realizar la búsqueda con Google Custom Search
-            const searchElement = document.querySelector('.gcse-searchresults-only');
-            searchElement.setAttribute('data-query', query);
-            google.search.cse.element.getElement('searchresults-only0').execute(query);
+            // Execute Google CSE search
+            try {
+                const cseElement = google.search.cse.element.getElement("searchresults-only0");
+                if (cseElement) {
+                    cseElement.execute(query);
+                } else {
+                    console.error("Google CSE element not found.");
+                }
+            } catch (error) {
+                console.error("Error executing Google CSE search:", error);
+            }
+        }
+
+        function performLuckySearch() {
+            const query = document.getElementById("search-input").value;
+            if (!query.trim()) return;
+            window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}&btnI`, '_blank');
         }
 
         function goBack() {
             document.getElementById("google-home").style.display = "flex";
             document.getElementById("search-results").style.display = "none";
             document.getElementById("search-input").value = "";
+            document.getElementById("search-input-results").value = "";
         }
     </script>
 

@@ -1,11 +1,10 @@
-/* styles/web.css */
-
 /* Google Search Container */
 .google-search-container {
     width: 100%;
     height: 100%;
     overflow: hidden;
     position: relative;
+    background: #ffffff; /* Ensure background matches screen */
 }
 
 /* Google Home Interface */
@@ -17,12 +16,11 @@
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background: #ffffff;
+    background: transparent; /* Match screen background */
 }
 
-/* Google Logo */
 .google-logo {
-    width: 150px;
+    width: 120px;
     margin-bottom: 20px;
 }
 
@@ -30,26 +28,25 @@
 .search-bar {
     display: flex;
     align-items: center;
-    width: 90%;
-    max-width: 300px;
+    width: 80%;
+    max-width: 400px;
     border: 1px solid #dfe1e5;
     border-radius: 24px;
-    padding: 5px 10px;
-    background-color: white;
-    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    padding: 8px 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Search Input */
 #search-input, #search-input-results {
     flex: 1;
     border: none;
     outline: none;
-    font-size: 14px;
+    font-size: 16px;
     padding: 5px;
     font-family: 'Roboto', sans-serif;
+    background: transparent;
 }
 
-/* Search Icon */
 .search-icon {
     background: none;
     border: none;
@@ -58,31 +55,33 @@
 }
 
 .search-icon img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 
 /* Search Buttons */
 .search-buttons {
     margin-top: 20px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .search-buttons button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     background-color: #f8f9fa;
-    border: 1px solid #f8f9fa;
-    border-radius: 4px;
+    border: 1px solid #dfe1e5;
+    border-radius: 5px;
     color: #3c4043;
     font-size: 14px;
     cursor: pointer;
     font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
 }
 
 .search-buttons button:hover {
     background-color: #f1f3f4;
-    border: 1px solid #dadce0;
+    border-color: #dadce0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Search Results Container */
@@ -90,7 +89,8 @@
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    background-color: #ffffff;
+    background: transparent; /* Match screen background */
+    position: relative;
 }
 
 /* Search Header */
@@ -105,24 +105,27 @@
     z-index: 10;
 }
 
-/* Back Button */
 .back-button {
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     margin-right: 10px;
     color: #1a73e8;
+    padding: 5px;
 }
 
-/* Search Input in Results */
+.back-button:hover {
+    color: #1557b0;
+}
+
 #search-input-results {
     margin-right: 10px;
     border: 1px solid #dfe1e5;
     border-radius: 4px;
+    padding: 8px;
 }
 
-/* Search Button in Results */
 .search-header button {
     padding: 8px 16px;
     background-color: #1a73e8;
@@ -142,43 +145,64 @@
 .gsc-control-cse {
     font-family: 'Roboto', sans-serif !important;
     width: 100% !important;
-    padding: 0 !important;
+    padding: 10px !important;
     background: transparent !important;
+    border: none !important;
 }
 
 .gsc-search-box {
-    display: none !important; /* Hide Google's search box */
+    display: none !important; /* Hide Google's own search box */
 }
 
-.gsc-results-wrapper-overlay {
-    display: none !important; /* Prevent overlay */
+/* Explicitly disable any overlay */
+.gsc-results-wrapper-overlay,
+.gsc-modal-background-image,
+.gsc-overlay {
+    display: none !important;
+}
+
+.gsc-results-wrapper-nooverlay {
+    background: transparent !important;
+    width: 100% !important;
+    padding: 0 !important;
 }
 
 .gsc-results {
     width: 100% !important;
     padding: 10px !important;
+    background: transparent !important;
 }
 
 .gsc-result {
     border-bottom: 1px solid #dfe1e5;
-    padding: 10px 0;
+    padding: 15px 0;
+    background: transparent !important;
 }
 
 .gsc-thumbnail {
     max-width: 80px;
+    margin-right: 10px;
 }
 
 .gsc-url-top {
-    color: #1a0dab;
-    font-size: 14px;
+    color: #006621;
+    font-size: 13px;
 }
 
 .gsc-title {
     color: #1a0dab;
     font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .gsc-snippet {
     color: #4d5156;
     font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Ensure no unwanted opacity or background changes */
+.gsc-control-cse * {
+    background: transparent !important;
+    opacity: 1 !important;
 }

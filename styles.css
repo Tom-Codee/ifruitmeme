@@ -285,3 +285,18 @@ body {
 .social-icon:hover {
     transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
 }
+
+/* Nuevo contenedor para la imagen */
+.custom-icon {
+    position: absolute;
+    left: 90px; /* Ajustado para colocarlo entre el Wi-Fi y el texto del tiempo */
+    top: 15px;  /* Alineado verticalmente con los otros íconos */
+    z-index: 4; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Estilos de la imagen */
+.custom-icon img {
+    height: 37px; /* Igual que los otros íconos en la status bar */
+    width: auto;  /* Permite que el ancho se ajuste proporcionalmente */
+    object-fit: contain; /* Asegura que la imagen no se distorsione */
+}
