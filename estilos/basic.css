@@ -42,29 +42,6 @@ body {
     pointer-events: none; /* No se interactúa con phone */
 }
 
-/* 📲 PANTALLA INTERACTIVA */
-.screen {
-    position: absolute;
-    width: 625px;
-    height: 450px;
-    top: 30px;
-    left: 90px;
-    background-color: #F9F7EB;
-    border-radius: 10px;
-    overflow-y: auto; /* Activa el scroll */
-    scrollbar-width: none; /* Oculta scrollbar en Firefox */
-    -ms-overflow-style: none; /* Oculta scrollbar en Edge */
-    z-index: 1; /* Debajo de phone */
-    pointer-events: all; /* Se puede interactuar con la pantalla */
-    overflow-x: hidden; /* 🔹 Evita desplazamiento horizontal */
-}
-
-/* Ocultar scrollbar en Chrome y Safari */
-.screen::-webkit-scrollbar {
-    display: none;
-}
-
-
 /* 📟 BARRA DE ESTADO FIJA */
 .status-bar {
     position: absolute;
@@ -110,10 +87,17 @@ body {
     top: 30px;
 }
 
+.logo-icon img{
+    height: 30px;
+    right: 153px;
+    position: absolute;
+    top: 10px; /* Ajusta según la altura de .status-bar */
+}
+
 #current-time {
     position: absolute;
-    left: 50%;
-    top: px; /* Centered vertically within the 82px height */
+    left: 42%;
+    top: 35px; /* Centered vertically within the 82px height */
     transform: translateX(-50%) rotate(0deg); /* Center and rotate */
     font-size: 20px; /* Same as vertical */
     font-weight: bold;
@@ -121,10 +105,37 @@ body {
     white-space: nowrap; /* Prevent text wrapping */
     width: auto; /* Allow natural width */
     text-align: center;
+    letter-spacing: 3.1px; /* Aumenta el espacio entre caracteres */
 }
 
+/* 📲 PANTALLA INTERACTIVA */
+.screen {
+    position: absolute;
+    width: 625px;
+    height: 450px;
+    top: 30px;
+    left: 90px;
+    background-color: #F9F7EB;
+    border-radius: 10px;
+    overflow-y: auto; /* Activa el scroll */
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+    -ms-overflow-style: none; /* Oculta scrollbar en Edge */
+    z-index: 1; /* Debajo de phone */
+    pointer-events: all; /* Se puede interactuar con la pantalla */
+    overflow-x: hidden; /* 🔹 Evita desplazamiento horizontal */
+}
 
+/* Ocultar scrollbar en Chrome y Safari */
+.screen::-webkit-scrollbar {
+    display: none;
+}
 
+/* Simulación de contenido largo para probar scroll */
+.screen::after {
+    content: "";
+    display: block;
+    height: 0px; /* Permite scroll */
+}
 
 /* 🎮 BOTONES DE NAVEGACIÓN (FIJOS Y SOBRE TODO) */
 .nav-buttons {

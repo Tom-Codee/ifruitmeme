@@ -4,15 +4,15 @@
 
 /* Contacts List */
 .contacts-list {
-    padding: 15px;
-    background: #212121; /* Fondo gris oscuro igual al del móvil */
+    padding: 20px;
+    background: #F9F7EB; /* Fondo gris oscuro igual al del móvil */
 }
 
 
 .contacts-list h1 {
     font-size: 22px;
     font-weight: 500;
-    color: #ffffff;
+    color: #000000;
     margin: 0 0 15px 0;
     font-family: 'Roboto', sans-serif;
 }
@@ -22,13 +22,13 @@
     display: flex;
     align-items: center;
     padding: 12px 15px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #000000;
     cursor: pointer;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contact-item:hover {
-    background-color: #2a2a2a;
+    background-color: #858585;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -36,8 +36,8 @@
 .contact-initial {
     width: 40px;
     height: 40px;
-    background-color: #5f6368;
-    color: #ffffff;
+    background-color: #a8a8a8;
+    color: #000000;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -52,7 +52,7 @@
 .contact-name {
     font-size: 16px;
     font-weight: 500;
-    color: #ffffff;
+    color: #000000;
     font-family: 'Roboto', sans-serif;
     flex-grow: 1;
 }
@@ -63,7 +63,7 @@
     flex-direction: column;
     height: 100%;
     padding: 80px;
-    background: #212121;
+    background: #F9F7EB;
 }
 
 /* Contact Profile Section */
@@ -92,7 +92,7 @@
 .contact-name-header {
     font-size: 24px;
     font-weight: 600;
-    color: #ffffff;
+    color: #2e2e2e;
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
