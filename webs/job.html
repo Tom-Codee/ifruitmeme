@@ -1,59 +1,88 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación - GTA Phone Simulator</title>
+    <title>Jobs - Memecoin Hustle</title>
     <link rel="stylesheet" href="../estilos/basic.css">
+    <link rel="stylesheet" href="../estilos/job.css">
 </head>
 <body>
-
     <div class="phone">
-        <!-- BARRA DE ESTADO (FIJA, NO INTERACTIVA) -->
         <div class="status-bar">
             <div class="status-icons">
-                <img src="../images/señal.png" alt="Señal">
+                <img src="../images/señal.png" alt="Signal">
                 <img src="../images/segundologo.png" alt="Wi-Fi">
             </div>
             <span id="current-time">12:00</span>
             <div class="battery-icon">
-                <img src="../images/battery.png" alt="Batería">
+                <img src="../images/battery.png" alt="Battery">
             </div>
             <div class="logo-icon">
                 <img src="../images/isolfruit.png" alt="Logo">
             </div>
         </div>
 
-        <!-- PANTALLA INTERACTIVA (SCROLLABLE) -->
         <div class="screen">
-            <!-- AQUÍ IREMOS AGREGANDO CONTENIDO -->
+            <div class="jobs-list">
+                <h2>Memecoin Gig Economy</h2>
+                <p class="subtitle">Earn crypto by joining the meme revolution!</p>
 
+                <div class="job-card" onclick="showDetails('shiba')">
+                    <h3>🐕 Shiba Inu Meme Curator</h3>
+                    <p><strong>Duration:</strong> 2 hours</p>
+                    <p><strong>Pay:</strong> 50 $SHIB</p>
+                    <p class="brief">Scour the web for the dankest Shiba memes.</p>
+                </div>
 
-            <div class="test-content">
-                <div class="section red">Sección 1</div>
-                <div class="section blue">Sección 2</div>
-                <div class="section green">Sección 3</div>
-                <div class="section yellow">Sección 4</div>
-                <div class="section purple">Sección 5</div>
+                <div class="job-card" onclick="showDetails('moon')">
+                    <h3>🌙 MoonCoin Hype Ambassador</h3>
+                    <p><strong>Duration:</strong> 3 hours</p>
+                    <p><strong>Pay:</strong> 75 $MOON</p>
+                    <p class="brief">Pump up the community with lunar enthusiasm.</p>
+                </div>
+
+                <div class="job-card" onclick="showDetails('woof')">
+                    <h3>🐾 WoofCoin Pack Leader</h3>
+                    <p><strong>Duration:</strong> 4 hours</p>
+                    <p><strong>Pay:</strong> 120 $WOOF</p>
+                    <p class="brief">Organize a howling good crypto event.</p>
+                </div>
+
+                <div class="job-card" onclick="showDetails('lizard')">
+                    <h3>🦎 LizardCoin Conspiracy Theorist</h3>
+                    <p><strong>Duration:</strong> Half-day</p>
+                    <p><strong>Pay:</strong> 200 $LIZ</p>
+                    <p class="brief">Uncover reptilian secrets for the blockchain.</p>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="job-modal" id="jobModal">
+                <div class="job-modal-content">
+                    <span class="close-btn" onclick="closeModal()">×</span>
+                    <div id="jobDetails"></div>
+                </div>
             </div>
         </div>
 
-        <!-- BOTONES FIJOS (SOBRE TODO) -->
         <div class="nav-buttons">
             <button class="nav-button">
                 <a href="https://x.com/isolfruitcoin" target="_blank">
-                    <img src="../images/lupa.png" alt="Atrás">
+                    <img src="../images/lupa.png" alt="Back">
                 </a>
             </button>
             <button class="nav-button" onclick="window.location.href = '../index.html'">
-                <img src="../images/botonhome.png" alt="Inicio">
+                <img src="../images/botonhome.png" alt="Home">
             </button>
             <button class="nav-button" onclick="openApps()">
-                <img src="../images/atras.png" alt="Aplicaciones recientes">
+                <img src="../images/atras.png" alt="Apps">
             </button>
         </div>
     </div>
 
+    <script src="../js/job.js"></script>
     <script src="../js/settings.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>

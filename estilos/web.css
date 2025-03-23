@@ -2,12 +2,13 @@
 .wiki-search-app {
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 40px; /* Espacio generoso para minimalismo */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    font-family: 'Caveat', cursive;
-    background-color: #f9f7eb;
+    font-family: 'Inter', sans-serif; /* Fuente moderna y elegante */
+    background: #ffffff; /* Fondo blanco puro para limpieza */
+    overflow: hidden; /* Evita desbordamientos */
 }
 
 /* Pantalla inicial */
@@ -17,64 +18,84 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 35px; /* Espaciado amplio para un diseño aireado */
 }
 
 #wikiHome h2 {
-    font-size: 32px;
+    font-size: 42px; /* Tamaño grande pero equilibrado */
     margin: 0;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#wikiHome h2::before {
-    content: '🌐';
-    font-size: 28px;
+    font-weight: 600; /* Peso medio para profesionalidad */
+    color: #1a1a1a; /* Negro suave para elegancia */
+    letter-spacing: -0.5px; /* Espaciado sutil */
+    text-transform: uppercase; /* Mayúsculas para impacto */
+    background: linear-gradient(90deg, #6200ea, #d81b60); /* Gradiente moderno */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Texto con gradiente */
 }
 
 #wikiHome p {
-    font-size: 20px;
-    color: #555;
-    max-width: 400px;
+    font-size: 16px; /* Tamaño discreto y legible */
+    color: #666666; /* Gris medio para suavidad */
+    max-width: 480px;
+    line-height: 1.6; /* Espaciado para legibilidad */
+    font-weight: 400; /* Peso ligero para minimalismo */
 }
 
-/* Buscador elegante */
+/* Buscador elegante y minimalista */
 .wiki-search-bar {
     display: flex;
     align-items: center;
-    background-color: #fff;
-    border-radius: 18px;
+    background-color: #ffffff;
+    border-radius: 50px; /* Bordes completamente redondeados */
     padding: 12px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra muy sutil */
+    max-width: 580px; /* Ancho profesional */
     width: 100%;
+    border: 1px solid #e0e0e0; /* Borde fino y elegante */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.wiki-search-bar:hover,
+.wiki-search-bar:focus-within {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al interactuar */
+    border-color: #6200ea; /* Borde púrpura al enfocar */
 }
 
 .wiki-search-bar input {
     flex: 1;
     border: none;
     outline: none;
-    font-size: 20px;
-    padding: 8px 10px;
-    border-radius: 10px;
+    font-size: 18px; /* Tamaño claro y profesional */
+    padding: 12px 15px;
     background: transparent;
-    font-family: 'Caveat', cursive;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    color: #333333; /* Negro suave */
+    transition: color 0.2s ease;
 }
 
 .wiki-search-bar input::placeholder {
-    color: #aaa;
+    color: #999999; /* Gris claro y discreto */
+    font-weight: 400;
+}
+
+.wiki-search-bar input:focus {
+    color: #6200ea; /* Púrpura al enfocar */
 }
 
 .wiki-search-bar button {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
-    color: #4a4a4a;
-    padding: 6px 10px;
+    color: #6200ea; /* Púrpura moderno */
+    padding: 10px 15px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.wiki-search-bar button:hover {
+    color: #d81b60; /* Rosa para contraste */
+    transform: scale(1.1); /* Agrandamiento sutil */
 }
 
 /* Resultado */
@@ -86,28 +107,39 @@
 }
 
 .wiki-toolbar {
-    padding: 10px;
-    background: #eee;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    padding: 12px 20px;
+    background: #fafafa; /* Fondo gris muy claro */
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
     display: flex;
     justify-content: flex-start;
+    border-bottom: 1px solid #e0e0e0; /* Borde fino */
 }
 
 .wiki-toolbar button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
+    background: #ffffff;
+    color: #6200ea; /* Púrpura para consistencia */
+    border: 1px solid #e0e0e0;
+    padding: 8px 18px;
+    border-radius: 20px; /* Bordes redondeados */
     cursor: pointer;
-    font-size: 18px;
-    font-family: 'Caveat', cursive;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wiki-toolbar button:hover {
+    background: #6200ea; /* Fondo púrpura al hover */
+    color: #ffffff; /* Texto blanco */
+    box-shadow: 0 2px 8px rgba(98, 0, 234, 0.3); /* Sombra púrpura */
 }
 
 #wikiViewer {
     flex-grow: 1;
     width: 100%;
-    border: none;
-    border-radius: 12px;
+    border: 1px solid #e0e0e0; /* Borde minimalista */
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra muy ligera */
 }
