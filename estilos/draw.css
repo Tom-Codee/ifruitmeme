@@ -12,6 +12,7 @@
     padding: 10px;
     top: 15px;
     left: 20px;
+    font-family: 'Caveat', cursive;
 }
 
 /* Canvas */
@@ -101,6 +102,7 @@ input[type="range"] {
     text-align: center;
     background: transparent;
     padding: 20px;
+    font-family: 'Caveat', cursive;
 }
 
 /* Gallery Grid */
@@ -109,6 +111,7 @@ input[type="range"] {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-content: center;
+    
 }
 
 /* Gallery Item */
