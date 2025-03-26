@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 customBarColor2 = "#006600";
                 break;
             case "purple":
-                bgImage = "url('../images/back/background-purple.png')";
+                bgImage = "url('../images/back/back-violeta.jpg')";
                 screenColor = "#E0D1FF";
                 customBarColor1 = "#CC99FF";
                 customBarColor2 = "#6600CC";

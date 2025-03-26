@@ -301,71 +301,30 @@ body {
     object-fit: contain; /* Asegura que la imagen no se distorsione */
 }
 
+/*RADIO:*/
 
-/* Estilos de la radio */
-
-
-
-/* Existing CSS unchanged, adding new styles below */
-
-/* Radio carousel container */
-.radio-carousel {
+.radio-app-button {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: transparent; /* Transparent background */
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    left: 170px; /* Ajusta la distancia desde la izquierda */
     z-index: 10;
 }
 
-/* Radio buttons container */
-.radio-buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between buttons */
-    transition: transform 0.5s ease; /* Smooth sliding animation */
-}
-
-/* Individual radio button */
-.radio-button {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, rgba(51, 51, 51, 0.8), rgba(0, 0, 0, 0.2));
-    opacity: 0.7; /* Side buttons slightly transparent */
+.app-button {
+    background: none; /* Sin fondo para que la imagen sea el foco */
+    border: none;
     cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 0; /* Elimina padding para que el tamaño dependa de la imagen */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Center button */
-.radio-button.center {
-    width: 60px;
+.app-button:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el ratón */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.button-icon {
+    width: 60px; /* Ajusta el tamaño de la imagen */
     height: 60px;
-    background: #fff; /* White background for center */
-    opacity: 1; /* Fully opaque */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Radio icon */
-.radio-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-
-/* Station display */
-.station-display {
-    margin-top: 10px;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.5s ease; /* Fade effect */
+    object-fit: contain; /* Asegura que la imagen no se distorsione */
 }
