@@ -320,7 +320,6 @@ body {
 
 .app-button:hover {
     transform: scale(1.1); /* Efecto de agrandamiento al pasar el ratón */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .button-icon {
