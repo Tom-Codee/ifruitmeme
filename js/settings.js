@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 customBarColor2 = "#6600CC";
                 break;
             case "yellow":
-                bgImage = "url('../images/back/background-yellow.png')";
+                bgImage = "url('../images/back/background-yellow.jpg')";
                 screenColor = "#FFF8D1";
                 customBarColor1 = "#FFFF99";
                 customBarColor2 = "#CCCC00";
