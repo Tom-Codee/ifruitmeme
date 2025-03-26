@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 customBarColor2 = "#006600";
                 break;
             case "purple":
-                bgImage = "url('../images/back/back-violeta.jpg')";
+                bgImage = "url('../images/back/background-violeta.png')";
                 screenColor = "#E0D1FF";
                 customBarColor1 = "#CC99FF";
                 customBarColor2 = "#6600CC";
                 break;
             case "yellow":
-                bgImage = "url('../images/back/background-yellow.jpg')";
+                bgImage = "url('../images/back/background-yellow.png')";
                 screenColor = "#FFF8D1";
                 customBarColor1 = "#FFFF99";
                 customBarColor2 = "#CCCC00";
