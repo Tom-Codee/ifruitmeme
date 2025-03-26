@@ -300,3 +300,72 @@ body {
     width: auto;  /* Permite que el ancho se ajuste proporcionalmente */
     object-fit: contain; /* Asegura que la imagen no se distorsione */
 }
+
+
+/* Estilos de la radio */
+
+
+
+/* Existing CSS unchanged, adding new styles below */
+
+/* Radio carousel container */
+.radio-carousel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent; /* Transparent background */
+    z-index: 10;
+}
+
+/* Radio buttons container */
+.radio-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between buttons */
+    transition: transform 0.5s ease; /* Smooth sliding animation */
+}
+
+/* Individual radio button */
+.radio-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, rgba(51, 51, 51, 0.8), rgba(0, 0, 0, 0.2));
+    opacity: 0.7; /* Side buttons slightly transparent */
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Center button */
+.radio-button.center {
+    width: 60px;
+    height: 60px;
+    background: #fff; /* White background for center */
+    opacity: 1; /* Fully opaque */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Radio icon */
+.radio-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Station display */
+.station-display {
+    margin-top: 10px;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease; /* Fade effect */
+}

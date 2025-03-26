@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.reply) {
                 addMessage(currentChatPerson, data.reply, 'bot');
             } else {
-                addMessage(currentChatPerson, "Hmm, I'm not sure what to say...", 'bot');
+                addMessage(currentChatPerson, "Hmm, I'm not sure what to say...",    'bot');
             }
         } catch (error) {
             console.error('Error:', error);
