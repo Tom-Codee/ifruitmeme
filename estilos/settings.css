@@ -1,72 +1,98 @@
-/* Settings-specific styles */
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+body {
+    font-family: 'Gloria Hallelujah', cursive;
+    background: url('../images/paper-texture.png'); /* Usa una textura tipo papel */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #222;
+}
+
+/* Contenedor visual del móvil */
 .settings-container {
-    padding: 20px;
+    padding: 24px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers horizontally */
-    justify-content: center; /* Centers vertically if height allows */
-    height: 100%; /* Ensures it takes full screen height */
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
 }
 
+/* Título */
 .settings-title {
-    font-family: 'Caveat', cursive; /* Handwritten font */
-    font-size: 36px;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 34px;
+    margin-bottom: 8px;
+    color: #222;
 }
 
+/* Subtítulo */
 .settings-subtitle {
-    font-family: 'Caveat', cursive;
-    font-size: 20px;
-    color: #666;
+    font-size: 18px;
+    color: #555;
     margin-bottom: 20px;
 }
 
-/* Theme Selector */
+/* Selector de temas */
 .theme-selector {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centers items horizontally */
-    gap: 15px;
-    max-width: 500px; /* Limits width for better control */
-    margin: 0 auto; /* Centers the container itself */
+    justify-content: center;
+    gap: 16px;
+    max-width: 90%;
 }
 
+/* Caja de tema */
 .theme-box {
-    width: 80px;
-    height: 80px;
-    border-radius: 10px;
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
     cursor: pointer;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
+    border: 2px solid transparent;
+    transform: perspective(800px) rotateX(0deg) rotateY(0deg);
 }
 
 .theme-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    transform: scale(1.06) rotateX(2deg);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
 .theme-box span.theme-label {
-    font-family: 'Caveat', cursive;
-    font-size: 18px;
+    font-size: 17px;
     color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
     position: absolute;
     z-index: 2;
+    bottom: 8px;
 }
 
-/* Theme Colors */
-.theme-box[data-theme="default"] { background-color: #F9F7EB; }
-.theme-box[data-theme="red"] { background-color: #d11010; }
-.theme-box[data-theme="blue"] { background-color: #0033cc; }
-.theme-box[data-theme="green"] { background-color: #1d6b1d; }
-.theme-box[data-theme="purple"] { background-color: #5a2d82; }
-.theme-box[data-theme="yellow"] { background-color: #f4c542; }
+/* Colores de temas */
+.theme-box[data-theme="default"] { background-color: #f9f7eb; }
+.theme-box[data-theme="red"]     { background-color: #e63946; }
+.theme-box[data-theme="blue"]    { background-color: #007aff; }
+.theme-box[data-theme="green"]   { background-color: #2d6a4f; }
+.theme-box[data-theme="purple"]  { background-color: #6f42c1; }
+.theme-box[data-theme="yellow"]  { background-color: #f4c542; }
+
+/* Responsive */
+@media (max-width: 480px) {
+    .theme-box {
+        width: 72px;
+        height: 72px;
+    }
+    .theme-box span.theme-label {
+        font-size: 15px;
+    }
+}
