@@ -1,6 +1,7 @@
 // Selecciona todos los íconos y títulos
 const icons = document.querySelectorAll('.icon');
 const nameImages = document.querySelectorAll('.name-image');
+window.token = "https://x.com/isolfruitcoin"; // Valor inicial del token
 
 // Añade eventos de hover
 icons.forEach(icon => {

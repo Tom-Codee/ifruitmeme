@@ -13,6 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const API_URL = 'https://chat-server-vdot.onrender.com/chat';
 
+    const welcomeMessages = {
+        "Elon Musk": "To the moon? Mars? Memecoins? Let’s go 🚀",
+        "Trevor Philips": "Speak fast before I lose patience.",
+        "Vitalik Buterin": "Scaling, staking or governance? I’m all ears.",
+        "Changpeng Zhao (CZ)": "Funds are SAFU. What’s on your mind?",
+        "Brian Armstrong": "Let’s talk adoption, utility, and regulation.",
+        "Satoshi Nakamoto": "The code is law. What brings you here?",
+        "Sam Bankman-Fried (SBF)": "It was just a spreadsheet error, I swear.",
+        "Do Kwon": "Still stable. Let’s not talk about it.",
+        "Michael De Santa": "I gave up crime for this? Alright, shoot.",
+        "Franklin Clinton": "Let’s make some digital cash, homie.",
+        "Niko Bellic": "Liberty City was hard. So is crypto.",
+        "CJ (Carl Johnson)": "Ah sh*t, here we go again...",
+        "Tommy Vercetti": "Vice City vibes. Let’s get straight to business.",
+        "Lester Crest": "I’m listening. And watching. Always.",
+        "Chop": "Guau guau 🐾"
+    };
+    
+
     // 🔹 Guardar el chat en sessionStorage
     function saveChat() {
         if (currentChatPerson) {
@@ -83,7 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
 
             if (!saved) {
-                addMessage(currentChatPerson, `Hi! I'm ${currentChatPerson}. What would you like to talk about?`, 'bot');
+                const welcome = welcomeMessages[currentChatPerson] || `${currentChatPerson} has joined the chat.`;
+                addMessage(currentChatPerson, welcome, 'bot');
+
             }
         });
     });
