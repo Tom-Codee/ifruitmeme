@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     let isViewingChat = false;
     let currentChatPerson = '';
-    let userId = Date.now().toString(); // Simple user ID
+    let userId = Date.now().toString();
 
-    // Element references
     const conversationsList = document.getElementById('conversations-list');
     const chatContainer = document.getElementById('chat-container');
     const chatBox = document.getElementById('chat-box');
@@ -12,27 +11,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatName = document.getElementById('chat-name');
     const chatImg = document.getElementById('chat-img');
 
-    // API endpoint - replace with your Render URL
-    const API_URL = 'https://your-render-app.onrender.com/api/chat';
+    const API_URL = 'https://chat-server-vdot.onrender.com/chat';
 
-    // Handle conversation clicks
+    // Función para guardar el chat actual
+    function saveChat() {
+        sessionStorage.setItem(`chat-${currentChatPerson}`, chatBox.innerHTML);
+    }
+
+    // Entrar a una conversación
     document.querySelectorAll('.conversation').forEach(conversation => {
         conversation.addEventListener('click', () => {
             currentChatPerson = conversation.dataset.name;
             chatName.textContent = currentChatPerson;
             chatImg.src = conversation.dataset.img;
-            
-            // Clear and show initial message
-            chatBox.innerHTML = '';
-            addMessage(currentChatPerson, `Hi! I'm ${currentChatPerson}. What would you like to talk about?`, 'bot');
-            
+
+            // Cargar historial guardado si existe
+            const saved = sessionStorage.getItem(`chat-${currentChatPerson}`);
+            chatBox.innerHTML = saved || '';
+            if (!saved) {
+                addMessage(currentChatPerson, `Hi! I'm ${currentChatPerson}. What would you like to talk about?`, 'bot');
+            }
+
             conversationsList.style.display = 'none';
             chatContainer.style.display = 'flex';
             isViewingChat = true;
         });
     });
 
-    // Send message
     sendBtn.addEventListener('click', sendMessage);
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
@@ -44,17 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDiv.innerHTML = `<strong>${type === 'bot' ? sender : 'You'}:</strong> ${text}`;
         chatBox.appendChild(messageDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
+        saveChat(); // Guardar cada mensaje
     }
 
     async function sendMessage() {
         const message = userInput.value.trim();
         if (!message || !currentChatPerson) return;
 
-        // Add user message
         addMessage('You', message, 'user');
         userInput.value = '';
 
-        // Show typing indicator
         const typingIndicator = document.createElement('div');
         typingIndicator.className = 'typing';
         typingIndicator.textContent = `${currentChatPerson} is typing...`;
@@ -62,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chatBox.scrollTop = chatBox.scrollHeight;
 
         try {
-            // Call our backend API
             const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {
@@ -76,15 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             const data = await response.json();
-            
-            // Remove typing indicator
             chatBox.removeChild(typingIndicator);
-            
-            if (data.reply) {
-                addMessage(currentChatPerson, data.reply, 'bot');
+
+            if (data.response) {
+                addMessage(currentChatPerson, data.response, 'bot');
             } else {
-                addMessage(currentChatPerson, "Hmm, I'm not sure what to say...",    'bot');
+                addMessage(currentChatPerson, "Hmm, I'm not sure what to say...", 'bot');
             }
+
         } catch (error) {
             console.error('Error:', error);
             chatBox.removeChild(typingIndicator);
@@ -92,8 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Back button
-    window.goBack = function() {
+    window.goBack = function () {
         if (isViewingChat) {
             conversationsList.style.display = 'block';
             chatContainer.style.display = 'none';
