@@ -13,44 +13,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const API_URL = 'https://chat-server-vdot.onrender.com/chat';
 
-    // Función para guardar el chat actual
+    // 🔹 Guardar el chat en sessionStorage
     function saveChat() {
-        sessionStorage.setItem(`chat-${currentChatPerson}`, chatBox.innerHTML);
+        if (currentChatPerson) {
+            // Guarda el contenido del chat
+            sessionStorage.setItem(`chat-${currentChatPerson}`, chatBox.innerHTML);
+    
+            // 🔹 Guardar último mensaje como texto plano
+            const messages = chatBox.querySelectorAll('.message');
+            if (messages.length > 0) {
+                const last = messages[messages.length - 1];
+                const textOnly = last.textContent || '';
+                sessionStorage.setItem(`preview-${currentChatPerson}`, textOnly.slice(0, 50));
+            }
+        }
     }
 
-    // Entrar a una conversación
-    document.querySelectorAll('.conversation').forEach(conversation => {
-        conversation.addEventListener('click', () => {
-            currentChatPerson = conversation.dataset.name;
-            chatName.textContent = currentChatPerson;
-            chatImg.src = conversation.dataset.img;
 
-            // Cargar historial guardado si existe
-            const saved = sessionStorage.getItem(`chat-${currentChatPerson}`);
-            chatBox.innerHTML = saved || '';
-            if (!saved) {
-                addMessage(currentChatPerson, `Hi! I'm ${currentChatPerson}. What would you like to talk about?`, 'bot');
+
+    function updatePreview(text, isBot) {
+        const conversations = document.querySelectorAll('.conversation');
+        conversations.forEach(conv => {
+            if (conv.dataset.name === currentChatPerson) {
+                const preview = conv.querySelector('.conversation-preview');
+                const who = isBot ? currentChatPerson : 'You';
+                preview.textContent = `${who}: ${text.slice(0, 50)}${text.length > 50 ? '...' : ''}`;
             }
-
-            conversationsList.style.display = 'none';
-            chatContainer.style.display = 'flex';
-            isViewingChat = true;
         });
-    });
+    }
 
-    sendBtn.addEventListener('click', sendMessage);
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendMessage();
-    });
-
+    
+    // 🔹 Añadir mensaje al chat
     function addMessage(sender, text, type) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${type}`;
         messageDiv.innerHTML = `<strong>${type === 'bot' ? sender : 'You'}:</strong> ${text}`;
         chatBox.appendChild(messageDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
-        saveChat(); // Guardar cada mensaje
+        saveChat(); // guardar cada vez que se escribe
+
+
+        
+    // 🔹 Actualizar preview de la conversación
+    if (type === 'user' || type === 'bot') {
+        updatePreview(text, type === 'bot');
     }
+    }
+
+    // 🔹 Entrar a una conversación
+    document.querySelectorAll('.conversation').forEach(conversation => {
+        conversation.addEventListener('click', () => {
+            currentChatPerson = conversation.dataset.name;
+            chatName.textContent = currentChatPerson;
+            chatImg.src = conversation.dataset.img;
+
+            conversationsList.style.display = 'none';
+            chatContainer.style.display = 'flex';
+            isViewingChat = true;
+
+            // Recuperar chat si existe
+            const saved = sessionStorage.getItem(`chat-${currentChatPerson}`);
+            chatBox.innerHTML = saved || '';
+
+                        // 🔹 Mostrar también el preview si hay
+            const previewText = sessionStorage.getItem(`preview-${currentChatPerson}`);
+            if (previewText) {
+                updatePreview(previewText, false); // false = lo presenta como si lo hubiera enviado "You"
+            }
+            
+
+            if (!saved) {
+                addMessage(currentChatPerson, `Hi! I'm ${currentChatPerson}. What would you like to talk about?`, 'bot');
+            }
+        });
+    });
+
+    // 🔹 Enviar mensaje
+    sendBtn.addEventListener('click', sendMessage);
+    userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendMessage();
+    });
 
     async function sendMessage() {
         const message = userInput.value.trim();
@@ -94,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // 🔹 Botón de volver
     window.goBack = function () {
         if (isViewingChat) {
             conversationsList.style.display = 'block';
@@ -101,4 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
             isViewingChat = false;
         }
     };
+
+    
 });
