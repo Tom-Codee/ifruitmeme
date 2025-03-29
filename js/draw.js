@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
    
-    //dibujar
+    //draw
     const canvas = document.getElementById("paintCanvas");
     if (canvas) {
         const ctx = canvas.getContext   ("2d");
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let erasing = false;
 
         function setCanvasBackground() {
-            ctx.fillStyle = "#F9F7EA"; // Color de fondo
+            ctx.fillStyle = "#F9F7EA"; //backgorund color
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
         setCanvasBackground();
