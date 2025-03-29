@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatName = document.getElementById('chat-name');
     const chatImg = document.getElementById('chat-img');
 
-    const API_URL = 'https://chat-server-vdot.onrender.com/chat';
+    const API_URL = 'https://chat-server-5qvy.onrender.com/chat';
 
     const welcomeMessages = {
         "Elon Musk": "To the moon? Mars? Memecoins? Let’s go 🚀",
