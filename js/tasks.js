@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Hardcoded "server-side" task completion states (developers edit this)
     const taskCompletionStates = {
-        "🎯 Reach $10K Market Cap": false,
+        "🎯 Reach $10K Market Cap": true,
         "🚀 Reach $50K Market Cap": false,
         "💰 Reach $100K Market Cap": false,
         "🏆 Reach $1M Market Cap": false,
