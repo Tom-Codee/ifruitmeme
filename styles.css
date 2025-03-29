@@ -247,28 +247,28 @@ body {
 }
 
 .social-icons {
-    position: absolute;
-    top: 10px; /* Ajusta la distancia desde la parte superior */
-    left: 10px; /* Ajusta la distancia desde la izquierda */
+    position: fixed; /* Cambiamos a fixed para que no se mueva con el scroll */
+    top: 20px; /* Distancia inicial desde la parte superior */
+    left: 10px; /* Ajusta la distancia desde el borde izquierdo */
     display: flex;
-    gap: 10px; /* Espacio entre las dos imágenes */
-    z-index: 10; /* Asegura que estén por encima del fondo y del phone */
+    flex-direction: column; /* Cambia la dirección a vertical */
+    gap: 10px; /* Espacio entre los íconos */
+    z-index: 10; /* Por encima de otros elementos */
 }
-
 .social-icon {
-    width: 80px; /* Tamaño de las imágenes */
-    height: 8   0px;
-    cursor: pointer; /* Indica que es clicable */
-    transition: transform 0.2s; /* Efecto suave al hacer hover */
+    width: 60px; /* Tamaño de las imágenes */
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el ratón */
+    transform: scale(1.1);
 }
 
 .social-icons {
     position: absolute;
-    top: 20px; /* Ajusta la distancia desde la parte superior */
+    top: 180px; /* Ajusta la distancia desde la parte superior */
     left: 10px; /* Ajusta la distancia desde la izquierda */
     display: flex;
     gap: 10px; /* Espacio entre las dos imágenes */
@@ -304,9 +304,9 @@ body {
 /*RADIO:*/
 
 .radio-app-button {
-    position: fixed;
-    top: 20px; /* Ajusta la distancia desde la parte superior */
-    left: 170px; /* Ajusta la distancia desde la izquierda */
+    position: fixed; /* Mantenemos fixed para consistencia */
+    top: 390px; /* Ajustado para que esté debajo de los 3 íconos sociales */
+    left: 10px; /* Misma distancia desde el borde izquierdo que .social-icons */
     z-index: 10;
 }
 
